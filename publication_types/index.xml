@@ -1,16 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publication_types | Marta Grześkiewicz</title>
+    <title>Publication_types on Marta Grześkiewicz</title>
     <link>https://martagrz.github.io/publication_types/</link>
-      <atom:link href="https://martagrz.github.io/publication_types/index.xml" rel="self" type="application/rss+xml" />
-    <description>Publication_types</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
-    <image>
-      <url>https://martagrz.github.io/img/icon-192.png</url>
-      <title>Publication_types</title>
-      <link>https://martagrz.github.io/publication_types/</link>
-    </image>
+    <description>Recent content in Publication_types on Marta Grześkiewicz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://martagrz.github.io/publication_types/index.xml" rel="self" type="application/rss+xml" />
+    
     
   </channel>
 </rss>

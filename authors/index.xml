@@ -1,24 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Authors | Marta Grześkiewicz</title>
+    <title>Authors on Marta Grześkiewicz</title>
     <link>https://martagrz.github.io/authors/</link>
-      <atom:link href="https://martagrz.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
-    <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
-    <image>
-      <url>https://martagrz.github.io/img/icon-192.png</url>
-      <title>Authors</title>
-      <link>https://martagrz.github.io/authors/</link>
-    </image>
+    <description>Recent content in Authors on Marta Grześkiewicz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://martagrz.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title></title>
       <link>https://martagrz.github.io/authors/admin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
       <guid>https://martagrz.github.io/authors/admin/</guid>
-      <description>&lt;p&gt;I am a first-year PhD student at the Department of Statistical Science, UCL. My research interests lie at the intersection of statistics, machine learning, computer science and economics. My project is kindly sponsored by &lt;a href=&#34;https://www.justeatplc.com/&#34;&gt;Just-Eat plc&lt;/a&gt;. I am supervised by &lt;a href=&#34;http://www.homepages.ucl.ac.uk/~ucakpde/&#34;&gt;Petros Dellaportas&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>I am a first-year PhD student at the Department of Statistical Science, UCL. My research interests lie at the intersection of statistics, machine learning, computer science and economics. My project is kindly sponsored by Just-Eat plc. I am supervised by Petros Dellaportas.</description>
     </item>
     
   </channel>
