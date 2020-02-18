@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dynamic pricing | Marta Grześkiewicz</title>
+    <link>https://martagrz.github.io/tags/dynamic-pricing/</link>
+      <atom:link href="https://martagrz.github.io/tags/dynamic-pricing/index.xml" rel="self" type="application/rss+xml" />
+    <description>Dynamic pricing</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 18 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://martagrz.github.io/img/icon-192.png</url>
+      <title>Dynamic pricing</title>
+      <link>https://martagrz.github.io/tags/dynamic-pricing/</link>
+    </image>
+    
+    <item>
+      <title>RL in Dynamic Pricing</title>
+      <link>https://martagrz.github.io/project/rl-dp/</link>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://martagrz.github.io/project/rl-dp/</guid>
+      <description>&lt;p&gt;Dynamic pricing relates to the set of problems where firms are required to set prices in response to state variables to maximise their revenue. Traditional approaches assume a functional form of the demand function and optimise for its parameters to find the optimal pricing solution. Reinforcement learning is a powerful tool, suitable for learning pricing policies under uncertainty of the reward function. It is a non-parametric method where a functional form of the function does not have to be assumed and the relationship is learned by trial and error. Under the conditions of uncertain demand, it is appropriate to apply reinforcement learning methods to dynamic pricing problems.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

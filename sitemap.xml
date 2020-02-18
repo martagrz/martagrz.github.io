@@ -3,18 +3,53 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://martagrz.github.io/tags/dynamic-pricing/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/post/gaussian-processes/gaussian-processes/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://martagrz.github.io/</loc>
-    <lastmod>2020-02-14T17:19:10+00:00</lastmod>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://martagrz.github.io/posts/my-first-post/</loc>
-    <lastmod>2020-02-14T17:19:10+00:00</lastmod>
+    <loc>https://martagrz.github.io/tags/multi-agent/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://martagrz.github.io/posts/</loc>
-    <lastmod>2020-02-14T17:19:10+00:00</lastmod>
+    <loc>https://martagrz.github.io/post/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/project/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/tags/reinforcement-learning/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/project/rl-dp/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/project/simultaneous-q/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/tags/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -30,10 +65,6 @@
   </url>
   
   <url>
-    <loc>https://martagrz.github.io/post/</loc>
-  </url>
-  
-  <url>
     <loc>https://martagrz.github.io/publication_types/</loc>
   </url>
   
@@ -43,10 +74,6 @@
   
   <url>
     <loc>https://martagrz.github.io/talk/</loc>
-  </url>
-  
-  <url>
-    <loc>https://martagrz.github.io/tags/</loc>
   </url>
   
 </urlset>

@@ -1,14 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Marta Grześkiewicz</title>
+    <title>Tags | Marta Grześkiewicz</title>
     <link>https://martagrz.github.io/tags/</link>
-    <description>Recent content in Tags on Marta Grześkiewicz</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+      <atom:link href="https://martagrz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tags</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 18 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://martagrz.github.io/img/icon-192.png</url>
+      <title>Tags</title>
+      <link>https://martagrz.github.io/tags/</link>
+    </image>
     
-	<atom:link href="https://martagrz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dynamic pricing</title>
+      <link>https://martagrz.github.io/tags/dynamic-pricing/</link>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://martagrz.github.io/tags/dynamic-pricing/</guid>
+      <description></description>
+    </item>
     
+    <item>
+      <title>Multi-agent</title>
+      <link>https://martagrz.github.io/tags/multi-agent/</link>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://martagrz.github.io/tags/multi-agent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reinforcement learning</title>
+      <link>https://martagrz.github.io/tags/reinforcement-learning/</link>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://martagrz.github.io/tags/reinforcement-learning/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
