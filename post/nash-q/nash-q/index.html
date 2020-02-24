@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="Introduction Implementing single-agent reinforcement learning methods in multi-agent settings where both agents update their values simultaneously is a generally naive method which does not result in convergent policies. Hu and Wellman (2003) attribute this to a neglect of two issues specific to the multiagent context. Firstly, the environment is no longer stationary since the agents are simultaneously adapting; the result of an agent&rsquo;s choice is going to change based on the choice of the other agents.">
+  <meta name="description" content="Introduction Implementing single-agent reinforcement learning methods in multi-agent settings where both agents update their values simultaneously is a generally naive method which does not result in convergent policies. Hu and Wellman (2003) attribute this to a neglect of two issues specific to the multi-agent context. Firstly, the environment is no longer stationary since the agents are simultaneously adapting; the result of an agent&#39;s choice is going to change based on the choice of the other agents.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://martagrz.github.io/post/nash-q/nash-q/">
@@ -115,13 +115,13 @@
   <meta property="og:site_name" content="Marta Grześkiewicz">
   <meta property="og:url" content="https://martagrz.github.io/post/nash-q/nash-q/">
   <meta property="og:title" content="Implementing Nash-Q Learning | Marta Grześkiewicz">
-  <meta property="og:description" content="Introduction Implementing single-agent reinforcement learning methods in multi-agent settings where both agents update their values simultaneously is a generally naive method which does not result in convergent policies. Hu and Wellman (2003) attribute this to a neglect of two issues specific to the multiagent context. Firstly, the environment is no longer stationary since the agents are simultaneously adapting; the result of an agent&rsquo;s choice is going to change based on the choice of the other agents."><meta property="og:image" content="https://martagrz.github.io/img/icon-192.png">
+  <meta property="og:description" content="Introduction Implementing single-agent reinforcement learning methods in multi-agent settings where both agents update their values simultaneously is a generally naive method which does not result in convergent policies. Hu and Wellman (2003) attribute this to a neglect of two issues specific to the multi-agent context. Firstly, the environment is no longer stationary since the agents are simultaneously adapting; the result of an agent&#39;s choice is going to change based on the choice of the other agents."><meta property="og:image" content="https://martagrz.github.io/img/icon-192.png">
   <meta property="twitter:image" content="https://martagrz.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-02-21T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2020-02-24T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-02-21T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2020-02-24T00:00:00&#43;00:00">
   
 
   
@@ -151,8 +151,8 @@
   },
   "headline": "Implementing Nash-Q Learning",
   
-  "datePublished": "2020-02-21T00:00:00Z",
-  "dateModified": "2020-02-21T00:00:00Z",
+  "datePublished": "2020-02-24T00:00:00Z",
+  "dateModified": "2020-02-24T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -167,7 +167,7 @@
       "url": "https://martagrz.github.io/img/icon-512.png"
     }
   },
-  "description": "Introduction Implementing single-agent reinforcement learning methods in multi-agent settings where both agents update their values simultaneously is a generally naive method which does not result in convergent policies. Hu and Wellman (2003) attribute this to a neglect of two issues specific to the multiagent context. Firstly, the environment is no longer stationary since the agents are simultaneously adapting; the result of an agent\u0026rsquo;s choice is going to change based on the choice of the other agents."
+  "description": "Introduction Implementing single-agent reinforcement learning methods in multi-agent settings where both agents update their values simultaneously is a generally naive method which does not result in convergent policies. Hu and Wellman (2003) attribute this to a neglect of two issues specific to the multi-agent context. Firstly, the environment is no longer stationary since the agents are simultaneously adapting; the result of an agent's choice is going to change based on the choice of the other agents."
 }
 </script>
 
@@ -431,7 +431,7 @@
     
       
     
-    Feb 21, 2020
+    Feb 24, 2020
   </span>
   
 
@@ -440,7 +440,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 min read
+    5 min read
   </span>
   
 
@@ -477,32 +477,63 @@
 
     <div class="article-style">
       <h3 id="introduction">Introduction</h3>
-<p>Implementing single-agent reinforcement learning methods in multi-agent settings where both agents update their values simultaneously is a generally naive method which does not result in convergent policies. Hu and Wellman (2003) attribute this to a neglect of two issues specific to the multiagent context. Firstly, the environment is no longer stationary since the agents are simultaneously adapting; the result of an agent&rsquo;s choice is going to change based on the choice of the other agents. This means that the theoretical guarantees that support Q-learning no longer apply. If the results of the agent&rsquo;s choice was affected by some stochastic process, then measures could be taken to incorporte the properties in the update rules. However, in this case, non-stationarity is generated by other agents, which leads to the second issue that single-agent techniques ignore: these agents may be presumed rational or at least regular in some informative way.</p>
-<p>Here, we consider the Nash-Q learning algorithm for general-sum Markov games, an extension to the Q-learning algorithm. It was proposed by Hu and Wellman (2003), where, under relatively stringent assumptions, their method guarantees to find an equilibirum. We leave out the theoretical foundations and focus only on the algorithm. You can find the original paper <a href="http://www.jmlr.org/papers/v4/hu03a.html">here</a>. We assume familiarity with single-agent Q-learning, including the state-value and state-action-value functions.</p>
+
+<p>Implementing single-agent reinforcement learning methods in multi-agent settings where both agents update their values simultaneously is a generally naive method which does not result in convergent policies. Hu and Wellman (2003) attribute this to a neglect of two issues specific to the multi-agent context. Firstly, the environment is no longer stationary since the agents are simultaneously adapting; the result of an agent's choice is going to change based on the choice of the other agents. This means that the theoretical guarantees that support Q-learning no longer apply. If the results of the agent's choice was affected by some stochastic process, then measures could be taken to incorporate the properties in the update rules. However, in this case, non-stationarity is generated by other agents, which leads to the second issue that single-agent techniques ignore: these agents may be presumed rational or at least regular in some informative way.</p>
+
+<p>Here, we consider the Nash-Q learning algorithm for general-sum Markov games, an extension to the Q-learning algorithm. It was proposed by Hu and Wellman (2003), where, under relatively stringent assumptions, their method guarantees to find an equilibrium. We leave out the theoretical foundations and focus only on the algorithm. You can find the original paper <a href="http://www.jmlr.org/papers/v4/hu03a.html">here</a>. We assume familiarity with single-agent Q-learning, including the state-value and state-action-value functions.</p>
+
 <h3 id="markov-games">Markov games</h3>
-<p>A <strong>Markov game</strong> is defined by a tuple $\left(\mathcal{N}, \mathcal{S}, { \mathcal{A^i} }<em>{i \in \mathcal{N}}, \mathcal{P}, { \mathcal{R}^i }</em>{i \in \mathcal{N}}, \gamma \right)$ where $\mathcal{N} = { 1, \dots, N }$ denotes the set of $N&gt;1$ agents, $\mathcal{S}$ denotes the state space observed by all agents, $\mathcal{A}^i$ denotes the action space of agent $i$. Let $\mathcal{A} := \mathcal{A}^1 \times \dots \times \mathcal{A}^N$ then $\mathcal{P} : \mathcal{S} \times \mathcal{A} \rightarrow \Delta (\mathcal{S})$ denotes the transition probability from any state $s \in \mathcal{S}$ to any state $s&rsquo; \in \mathcal{S}$ for any joint action $a \in \mathcal{A}$; $R^i: \mathcal{S} \times \mathcal{A} \times \mathcal{S} \rightarrow \mathbb{R}$ is the reward function that determines the immediate reward received by agent $i$ for a transition from $(s,a)$ to $s'$; $\gamma \in [0,1]$ is the discount factor.</p>
-<p>At time $t$, each agent $i \in \mathcal{N}$ executes an action $a_t^i$, according to the system state $s_t$. The system then transitions to state $s_{t+1}$ and rewards each agent $i$ by $R^i(s_t,a_t,s_{t+1})$. The goal of agent $i$ is to optimise its long-term reward, by finding the policy $\pi^i : \mathcal{S} \rightarrow \Delta (\mathcal{A}^i)$ such that $a^i_t \sim \pi^i(\cdot|s_t)$.</p>
-<h3 id="nash-q-learning-algorithm">Nash Q-learning algorithm</h3>
-<p>The learning agent initialises the Q-values with arbitrary values at the beginning of the period. It then chooses an action, observes its own reward and the actions taken by the other agents and their rewards and the new state $s'$. With a learning rate $\alpha$, it then calculates the Nash equilibirum for the state game and updates its Q-values according to the update rule</p>
-<p>$$  Q^i_{t+1} (s,a^1,\dots,a^N) = (1-\alpha) \cdot Q^i_t(s,a^1,\dots,a^N) + \alpha \left[R^i_t + \gamma NashQ^i_t(s&rsquo;)\right]  $$</p>
+
+<p>A <strong>Markov game</strong> is defined by a tuple <span  class="math">\(\left(\mathcal{N}, \mathcal{S}, \{ \mathcal{A^i} \}_{i \in \mathcal{N}}, \mathcal{P}, \{ \mathcal{R}^i \}_{i \in \mathcal{N}}, \gamma \right)\)</span> where $\mathcal{N} = { 1, \dots, N }$ denotes the set of $N&gt;1$ agents, $\mathcal{S}$ denotes the state space observed by all agents, $\mathcal{A}^i$ denotes the action space of agent $i$. Let $\mathcal{A} := \mathcal{A}^1 \times \dots \times \mathcal{A}^N$ then $\mathcal{P} : \mathcal{S} \times \mathcal{A} \rightarrow \Delta (\mathcal{S})$ denotes the transition probability from any state $s \in \mathcal{S}$ to any state $s' \in \mathcal{S}$ for any joint action $a \in \mathcal{A}$; $R^i: \mathcal{S} \times \mathcal{A} \times \mathcal{S} \rightarrow \mathbb{R}$ is the reward function that determines the immediate reward received by agent $i$ for a transition from $(s,a)$ to $s'$; $\gamma \in [0,1]$ is the discount factor.</p>
+
+<p>At time <span  class="math">\(t\)</span>, each agent $i \in \mathcal{N}$ executes an action $a_t^i$, according to the system state <span  class="math">\(s_t\)</span>. The system then transitions to state $s_{t+1}$ and rewards each agent $i$ by <span  class="math">\(R^i(s_t,a_t,s_{t+1})\)</span>. The goal of agent <span  class="math">\(i\)</span> is to optimise its long-term reward, by finding the policy $\pi^i : \mathcal{S} \rightarrow \Delta (\mathcal{A}^i)$ such that $a^i_t \sim \pi^i(\cdot|s_t)$.</p>
+
+<h3 id="nash-qlearning-algorithm">Nash Q-learning algorithm</h3>
+
+<p>The learning agent initialises the Q-values with arbitrary values at the beginning of the period. It then chooses an action, observes its own reward and the actions taken by the other agents and their rewards and the new state $s'$. With a learning rate $\alpha$, it then calculates the Nash equilibrium for the state game and updates its Q-values according to the update rule</p>
+
+<p><span  class="math">\[ Q^i_{t+1} (s,a^1,\dots,a^N) = (1-\alpha) \cdot Q^i_t(s,a^1,\dots,a^N) + \alpha \left[R^i_t + \gamma NashQ^i_t(s')\right]  \]</span></p>
+
 <p>where</p>
-<p>$$ NashQ^i_t(s&rsquo;) = \pi^1(s&rsquo;)\dots\pi^N(s&rsquo;) \cdot Q^i_t(s&rsquo;)$$</p>
-<p>In order to calculate the NE $(\pi^1(s&rsquo;)\dots\pi^N(s&rsquo;))$, agent $i$ would have to know the other agent&rsquo;s Q-values. But this is not givem so agent $i$ must learn about them too. For this, the agent also initialises the other agent&rsquo;s Q-values and updates them according to the same rule as above.</p>
+
+<p><span  class="math">\[NashQ^i_t(s') = \pi^1(s')\cdot \cdot \cdot \pi^N(s') \cdot Q^i_t(s')\]</span></p>
+
+<p>In order to calculate the Nash equilibirum <span  class="math">\((\pi^1(s')\cdot \cdot \cdot\pi^N(s'))\)</span>, agent $i$ would have to know the other agent's Q-values. But this is not given so agent $i$ must learn about them too. For this, the agent also initialises the other agent's Q-values and updates them according to the same rule as above.</p>
+
 <p>The summary of the algorithm is given below.</p>
-<p><img src="/img/posts/nash-q/nash-q-algo.png" alt="image.png"></p>
+
+<p><figure><img src="/img/posts/nash-q/nash-q-algo.png" alt="image.png"></figure></p>
+
 <h3 id="implementation">Implementation</h3>
-<p>For full implementation, see the github repo <a href="https://github.com/martagrz/nash-q">here</a>.</p>
-<p><img src="/img/posts/nash-q/optimal_policy_0_0.0.pdf" alt="png">
-<img src="/img/posts/nash-q/optimal_policy_1_0.0.pdf" alt="png"></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
-</code></pre></div><h4 id="implementation-with-error">Implementation with error</h4>
-<p>It is usually not possible for the agent to perfectly observe the other agents&rsquo; rewards due to noise. We therefore investigate the effect of including an error in the rewards observed for the other agents on convergence.</p>
-<p><img src="/img/posts/nash-q/optimal_policy_0_0.5.pdf" alt="png">
-<img src="/img/posts/nash-q/optimal_policy_1_0.5.pdf" alt="png"></p>
-<p>References</p>
-<p>Zhang et al. (2019).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
-</code></pre></div>
+
+<p>For the full implementation, see the <a href="https://github.com/martagrz/nash-q">github repo</a>. In a 4x4 grid, we train two players at starting points (0, 0) and (0, 2) with goals at (3, 2) and (3, 3), respectively. Actions are chosen based on an $\epsilon$-greedy algorithm, with $\epsilon =0.2$, the learning rate is $\alpha=0.2$, the discount rate is $\gamma=0.6$. We train at these values for 1,000 episodes. The quiver plots of the optimal actions at all possible states for both players are shown below.</p>
+
+<p><figure><img src="/img/posts/nash-q/optimal_policy_0_0.0.png" alt="Optimal policy for player 1"></figure>
+<figure><img src="/img/posts/nash-q/optimal_policy_1_0.0.png" alt="Optimal policy for player 2"></figure></p>
+
+<p>We see that neither player crosses the other's path and both arrive at their goal state. This is a very simple example where the agents do not have to interact with each other since the are many paths they can take where they will not cross. We then consider a slightly more interesting example, where the agents have to consider the other's actions. The starting points are now (0,0) and (0,3) and the end goals are (3,3) and (3,0), meaning they both have to make it across the entire grid.</p>
+
+<p><figure><img src="/img/posts/nash-q/optimal_policy_cross_0_0.png" alt="Optimal policy for player 1"></figure>
+<figure><img src="/img/posts/nash-q/optimal_policy_cross_1_0.png" alt="Optimal policy for player 2"></figure></p>
+
+<h4 id="implementation-with-error">Implementation with error</h4>
+
+<p>It is usually not possible for the agent to perfectly observe the other agents' rewards due to noise. We therefore investigate the effect of including an error in the rewards observed for the other agents on convergence. We train at these values for 1,000 episodes and see that more training is required as the policies do not converge to optimum. If trained for more than 1,000 episodes, then it does converge.</p>
+
+<p><figure><img src="/img/posts/nash-q/optimal_policy_cross_0_1.png" alt="Optimal policy for player 2"></figure>
+<figure><img src="/img/posts/nash-q/optimal_policy_cross_1_1.png" alt="Optimal policy for player 2"></figure></p>
+
+<p>Is convergence affects by the error with which rewards for the other agents is observed? Looking at this quick-and-dirty graph below, which plots the episodes against the number of steps taken until convergence, shows that there does not seem to be much of a difference in steps taken to converge.</p>
+
+<p><figure><img src="/img/posts/nash-q/n_steps_convergence.png" alt="Optimal policy for player 2"></figure></p>
+
+<h4 id="references">References</h4>
+
+<ul>
+<li>Hu, J. and Wellman, M.P., 2003. Nash Q-learning for general-sum stochastic games. <em>Journal of machine learning research, 4</em> (Nov), pp.1039-1069.</li>
+<li>Zhang, K., Yang, Z. and Başar, T., 2019. Multi-Agent Reinforcement Learning: A Selective Overview of Theories and Algorithms. <em>arXiv preprint arXiv:1911.10635.</em></li>
+</ul>
+
     </div>
 
     
