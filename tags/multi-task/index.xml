@@ -14,9 +14,9 @@
     
     <item>
       <title>Introduction to Multi-task Gaussian Processes</title>
-      <link>https://martagrz.github.io/post/gaussian-processes/gaussian-processes/</link>
+      <link>https://martagrz.github.io/post/gaussian-processes/</link>
       <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://martagrz.github.io/post/gaussian-processes/gaussian-processes/</guid>
+      <guid>https://martagrz.github.io/post/gaussian-processes/</guid>
       <description>&lt;p&gt;A significant part of scientific literature focuses on fitting and predicting from an unknown function. When the function is complex, does not have a closed-form solution or is &#39;blackbox&#39;, a strategy is required to fit such a function with limited prior information. Bayesian optimisation is a class of machine learning-based optimisation methods focused on such a problem, which is characterised by the objective&lt;/p&gt;
 
 &lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[\max_x f(x)\]&lt;/span&gt;&lt;/p&gt;
