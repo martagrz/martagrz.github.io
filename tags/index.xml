@@ -5,12 +5,44 @@
     <link>https://martagrz.github.io/tags/</link>
       <atom:link href="https://martagrz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 18 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://martagrz.github.io/img/icon-192.png</url>
       <title>Tags</title>
       <link>https://martagrz.github.io/tags/</link>
     </image>
+    
+    <item>
+      <title>Equilibirum</title>
+      <link>https://martagrz.github.io/tags/equilibirum/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://martagrz.github.io/tags/equilibirum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multi-Agent</title>
+      <link>https://martagrz.github.io/tags/multi-agent/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://martagrz.github.io/tags/multi-agent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Q-Learning</title>
+      <link>https://martagrz.github.io/tags/q-learning/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://martagrz.github.io/tags/q-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reinforcement Learning</title>
+      <link>https://martagrz.github.io/tags/reinforcement-learning/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://martagrz.github.io/tags/reinforcement-learning/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Dynamic pricing</title>
@@ -21,18 +53,18 @@
     </item>
     
     <item>
-      <title>Multi-agent</title>
-      <link>https://martagrz.github.io/tags/multi-agent/</link>
+      <title>Gaussian Processes</title>
+      <link>https://martagrz.github.io/tags/gaussian-processes/</link>
       <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://martagrz.github.io/tags/multi-agent/</guid>
+      <guid>https://martagrz.github.io/tags/gaussian-processes/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Reinforcement learning</title>
-      <link>https://martagrz.github.io/tags/reinforcement-learning/</link>
+      <title>Multi-Task</title>
+      <link>https://martagrz.github.io/tags/multi-task/</link>
       <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://martagrz.github.io/tags/reinforcement-learning/</guid>
+      <guid>https://martagrz.github.io/tags/multi-task/</guid>
       <description></description>
     </item>
     

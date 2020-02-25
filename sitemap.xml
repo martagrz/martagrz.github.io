@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://martagrz.github.io/tags/equilibirum/</loc>
+    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://martagrz.github.io/post/nash-q/nash-q/</loc>
     <lastmod>2020-02-24T00:00:00+00:00</lastmod>
   </url>
@@ -13,7 +18,27 @@
   </url>
   
   <url>
+    <loc>https://martagrz.github.io/tags/multi-agent/</loc>
+    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://martagrz.github.io/post/</loc>
+    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/tags/q-learning/</loc>
+    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/tags/reinforcement-learning/</loc>
+    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/tags/</loc>
     <lastmod>2020-02-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -23,22 +48,22 @@
   </url>
   
   <url>
+    <loc>https://martagrz.github.io/tags/gaussian-processes/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://martagrz.github.io/post/gaussian-processes/gaussian-processes/</loc>
     <lastmod>2020-02-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://martagrz.github.io/tags/multi-agent/</loc>
+    <loc>https://martagrz.github.io/tags/multi-task/</loc>
     <lastmod>2020-02-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://martagrz.github.io/project/</loc>
-    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://martagrz.github.io/tags/reinforcement-learning/</loc>
     <lastmod>2020-02-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -49,11 +74,6 @@
   
   <url>
     <loc>https://martagrz.github.io/project/simultaneous-q/</loc>
-    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://martagrz.github.io/tags/</loc>
     <lastmod>2020-02-18T00:00:00+00:00</lastmod>
   </url>
   

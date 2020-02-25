@@ -114,7 +114,7 @@
   
   <meta property="og:site_name" content="Marta Grześkiewicz">
   <meta property="og:url" content="https://martagrz.github.io/post/nash-q/nash-q/">
-  <meta property="og:title" content="Implementing Nash-Q Learning | Marta Grześkiewicz">
+  <meta property="og:title" content="Implementing Nash Q-Learning | Marta Grześkiewicz">
   <meta property="og:description" content="Introduction Implementing single-agent reinforcement learning methods in multi-agent settings where both agents update their values simultaneously is a generally naive method which does not result in convergent policies. Hu and Wellman (2003) attribute this to a neglect of two issues specific to the multi-agent context. Firstly, the environment is no longer stationary since the agents are simultaneously adapting; the result of an agent&#39;s choice is going to change based on the choice of the other agents."><meta property="og:image" content="https://martagrz.github.io/img/icon-192.png">
   <meta property="twitter:image" content="https://martagrz.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
   
@@ -149,7 +149,7 @@
     "@type": "WebPage",
     "@id": "https://martagrz.github.io/post/nash-q/nash-q/"
   },
-  "headline": "Implementing Nash-Q Learning",
+  "headline": "Implementing Nash Q-Learning",
   
   "datePublished": "2020-02-24T00:00:00Z",
   "dateModified": "2020-02-24T00:00:00Z",
@@ -185,7 +185,7 @@
 
 
 
-  <title>Implementing Nash-Q Learning | Marta Grześkiewicz</title>
+  <title>Implementing Nash Q-Learning | Marta Grześkiewicz</title>
 
 </head>
 
@@ -412,7 +412,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Implementing Nash-Q Learning</h1>
+  <h1>Implementing Nash Q-Learning</h1>
 
   
 
@@ -440,7 +440,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    8 min read
+    9 min read
   </span>
   
 
@@ -506,7 +506,53 @@
 
 <h3 id="implementation">Implementation</h3>
 
-<p>For the full implementation, see the <a href="https://github.com/martagrz/multi-agent-reinforcement-learning">github repo</a>. In a 4x4 grid, we train two players at starting points (0, 0) and (0, 2) with goals at (3, 2) and (3, 3), respectively. Actions are chosen based on an $\epsilon$-greedy algorithm, with $\epsilon =0.2$, the learning rate is $\alpha=0.2$, the discount rate is $\gamma=0.6$. We train at these values for 1,000 episodes. The quiver plots of the optimal actions at all possible states for both players are shown below.</p>
+<p>For the full implementation, see the <a href="https://github.com/martagrz/multi-agent-reinforcement-learning">github repo</a>. In a 4x4 grid, we train two players at starting points (0, 0) and (0, 2) with goals at (3, 2) and (3, 3), respectively. Actions are chosen based on an $\epsilon$-greedy algorithm, with $\epsilon =0.2$, the learning rate is $\alpha=0.2$, the discount rate is $\gamma=0.6$. We train at these values for 1,000 episodes.</p>
+
+<p>The Nash equilibirum is obtained through the <code>get_policies</code> function defined below. It uses the beliefs of the current player to select the best actions for the other players, knowing that all players use an $\epsilon$-greedy policy.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_policies</span>(self, player, state, greedy<span style="color:#f92672">=</span>False):
+    policies <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>ones(len(self<span style="color:#f92672">.</span>env<span style="color:#f92672">.</span>actions))
+    <span style="color:#66d9ef">for</span> other_player <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>env<span style="color:#f92672">.</span>n_players):
+        state_index <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_index(state[other_player])
+        greedy_action <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>argmax(self<span style="color:#f92672">.</span>q_tables[player, other_player, state_index])
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> greedy:
+            action_probability_distribution <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>ones(len(self<span style="color:#f92672">.</span>env<span style="color:#f92672">.</span>actions))
+            action_probability_distribution <span style="color:#f92672">*</span><span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>epsilon <span style="color:#f92672">/</span> len(self<span style="color:#f92672">.</span>env<span style="color:#f92672">.</span>actions)
+            action_probability_distribution[greedy_action] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> self<span style="color:#f92672">.</span>epsilon
+        <span style="color:#66d9ef">else</span>:
+            action_probability_distribution <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros(len(self<span style="color:#f92672">.</span>env<span style="color:#f92672">.</span>actions))
+            action_probability_distribution[greedy_action] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+        policies <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>dot(policies, action_probability_distribution)
+    <span style="color:#66d9ef">return</span> policies</code></pre></div>
+<p>This function is then used in the training, where each episode uses the <code>while</code> loop shown below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">while</span> <span style="color:#f92672">not</span> done<span style="color:#f92672">.</span>all():
+    <span style="color:#66d9ef">for</span> player <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>env<span style="color:#f92672">.</span>n_players):
+        current_state_index <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_index(state[player])
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> done[player]:
+            actions[player] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>int(self<span style="color:#f92672">.</span>choose_action(player, current_state_index))
+        <span style="color:#66d9ef">else</span>:
+            actions[player] <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
+    next_state, rewards, done <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>env<span style="color:#f92672">.</span>step(state, actions)
+    
+    <span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>env<span style="color:#f92672">.</span>n_players):
+        policies <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_policies(n, next_state)
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> done[n]:
+            <span style="color:#66d9ef">for</span> m <span style="color:#f92672">in</span> range(self<span style="color:#f92672">.</span>env<span style="color:#f92672">.</span>n_players):
+                current_state_index <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_index(state[m])
+                next_state_index <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_index(next_state[m])
+                next_state_q <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>q_tables[n, m, next_state_index]
+                nash_q <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>dot(policies, next_state_q)
+                <span style="color:#66d9ef">if</span> m <span style="color:#f92672">!=</span> n:
+                    reward <span style="color:#f92672">=</span> rewards[m] <span style="color:#f92672">+</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal(<span style="color:#ae81ff">0</span>, self<span style="color:#f92672">.</span>error_variance)
+                    value <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> self<span style="color:#f92672">.</span>alpha) <span style="color:#f92672">*</span> self<span style="color:#f92672">.</span>q_tables[n, m, current_state_index, actions[m]] <span style="color:#f92672">+</span> \
+                                self<span style="color:#f92672">.</span>alpha <span style="color:#f92672">*</span> (reward <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>gamma <span style="color:#f92672">*</span> nash_q)
+    
+                <span style="color:#66d9ef">else</span>:
+                    value <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> self<span style="color:#f92672">.</span>alpha) <span style="color:#f92672">*</span> self<span style="color:#f92672">.</span>q_tables[n, m, current_state_index, actions[m]] <span style="color:#f92672">+</span> \
+                                self<span style="color:#f92672">.</span>alpha <span style="color:#f92672">*</span> (rewards[m] <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>gamma <span style="color:#f92672">*</span> nash_q)
+                self<span style="color:#f92672">.</span>q_tables[n, m, current_state_index, actions[m]] <span style="color:#f92672">=</span> value
+
+state <span style="color:#f92672">=</span> next_state</code></pre></div>
+<p>The quiver plots of the optimal actions at all possible states for both players are shown below.</p>
 
 <p><figure><img src="/img/posts/nash-q/optimal_policy_0.png" alt="Optimal policies"></figure></p>
 
@@ -554,6 +600,18 @@
 
 
 
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/reinforcement-learning/">Reinforcement Learning</a>
+  
+  <a class="badge badge-light" href="/tags/multi-agent/">Multi-Agent</a>
+  
+  <a class="badge badge-light" href="/tags/q-learning/">Q-Learning</a>
+  
+  <a class="badge badge-light" href="/tags/equilibirum/">Equilibirum</a>
+  
+</div>
+
 
 
 <div class="share-box" aria-hidden="true">
@@ -567,7 +625,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://martagrz.github.io/post/nash-q/nash-q/&amp;text=Implementing%20Nash-Q%20Learning" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://martagrz.github.io/post/nash-q/nash-q/&amp;text=Implementing%20Nash%20Q-Learning" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -580,7 +638,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://martagrz.github.io/post/nash-q/nash-q/&amp;t=Implementing%20Nash-Q%20Learning" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://martagrz.github.io/post/nash-q/nash-q/&amp;t=Implementing%20Nash%20Q-Learning" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -593,7 +651,7 @@
       
       
       <li>
-        <a href="mailto:?subject=Implementing%20Nash-Q%20Learning&amp;body=https://martagrz.github.io/post/nash-q/nash-q/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Implementing%20Nash%20Q-Learning&amp;body=https://martagrz.github.io/post/nash-q/nash-q/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -606,7 +664,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://martagrz.github.io/post/nash-q/nash-q/&amp;title=Implementing%20Nash-Q%20Learning" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://martagrz.github.io/post/nash-q/nash-q/&amp;title=Implementing%20Nash%20Q-Learning" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -619,7 +677,7 @@
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Implementing%20Nash-Q%20Learning%20https://martagrz.github.io/post/nash-q/nash-q/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Implementing%20Nash%20Q-Learning%20https://martagrz.github.io/post/nash-q/nash-q/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -632,7 +690,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://martagrz.github.io/post/nash-q/nash-q/&amp;title=Implementing%20Nash-Q%20Learning" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://martagrz.github.io/post/nash-q/nash-q/&amp;title=Implementing%20Nash%20Q-Learning" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Multi-Agent | Marta Grześkiewicz</title>
-    <link>https://martagrz.github.io/tags/multi-agent/</link>
-      <atom:link href="https://martagrz.github.io/tags/multi-agent/index.xml" rel="self" type="application/rss+xml" />
-    <description>Multi-Agent</description>
+    <title>Q-Learning | Marta Grześkiewicz</title>
+    <link>https://martagrz.github.io/tags/q-learning/</link>
+      <atom:link href="https://martagrz.github.io/tags/q-learning/index.xml" rel="self" type="application/rss+xml" />
+    <description>Q-Learning</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://martagrz.github.io/img/icon-192.png</url>
-      <title>Multi-Agent</title>
-      <link>https://martagrz.github.io/tags/multi-agent/</link>
+      <title>Q-Learning</title>
+      <link>https://martagrz.github.io/tags/q-learning/</link>
     </image>
     
     <item>
@@ -132,15 +132,6 @@ state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; next_state&lt;/co
 &lt;li&gt;Greenwald, A., Hall, K. and Serrano, R., 2003, August. Correlated Q-learning. In &lt;em&gt;ICML&lt;/em&gt; (Vol. 20, No. 1, p. 242).&lt;/li&gt;
 &lt;li&gt;Maillard, O.A., Munos, R., Lazaric, A. and Ghavamzadeh, M., 2010, October. Finite-sample analysis of Bellman residual minimization. In &lt;em&gt;Proceedings of 2nd Asian Conference on Machine Learning&lt;/em&gt; (pp. 299-314).&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Simultaneous Q-Learning</title>
-      <link>https://martagrz.github.io/project/simultaneous-q/</link>
-      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://martagrz.github.io/project/simultaneous-q/</guid>
-      <description>&lt;p&gt;Multiple agents learning at the same time using a value-based approach leads to a non-stationary environment since it is constantly changing based on the opponent&amp;rsquo;s actions. I am investigating this system, including possible conditions on convergence and properties of this seemingly chaotic system.&lt;/p&gt;
 </description>
     </item>
     

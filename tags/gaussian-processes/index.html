@@ -31,7 +31,7 @@
   <meta name="description" content="PhD student">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://martagrz.github.io/tags/reinforcement-learning/">
+  <link rel="alternate" hreflang="en-us" href="https://martagrz.github.io/tags/gaussian-processes/">
 
   
 
@@ -95,14 +95,14 @@
 
 
   
-  <link rel="alternate" href="/tags/reinforcement-learning/index.xml" type="application/rss+xml" title="Marta Grześkiewicz">
+  <link rel="alternate" href="/tags/gaussian-processes/index.xml" type="application/rss+xml" title="Marta Grześkiewicz">
   
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://martagrz.github.io/tags/reinforcement-learning/">
+  <link rel="canonical" href="https://martagrz.github.io/tags/gaussian-processes/">
 
   
   
@@ -115,12 +115,12 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Marta Grześkiewicz">
-  <meta property="og:url" content="https://martagrz.github.io/tags/reinforcement-learning/">
-  <meta property="og:title" content="Reinforcement Learning | Marta Grześkiewicz">
+  <meta property="og:url" content="https://martagrz.github.io/tags/gaussian-processes/">
+  <meta property="og:title" content="Gaussian Processes | Marta Grześkiewicz">
   <meta property="og:description" content="PhD student"><meta property="og:image" content="https://martagrz.github.io/img/icon-192.png">
   <meta property="twitter:image" content="https://martagrz.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-02-24T00:00:00&#43;00:00">
+    <meta property="og:updated_time" content="2020-02-18T00:00:00&#43;00:00">
   
 
   
@@ -137,7 +137,7 @@
 
 
 
-  <title>Reinforcement Learning | Marta Grześkiewicz</title>
+  <title>Gaussian Processes | Marta Grześkiewicz</title>
 
 </head>
 
@@ -364,7 +364,7 @@
     
   
 <div class="universal-wrapper pt-3">
-  <h1>Reinforcement Learning</h1>
+  <h1>Gaussian Processes</h1>
 
   
 
@@ -379,28 +379,12 @@
   
   
   <div>
-    <h2><a href="/post/nash-q/nash-q/">Implementing Nash Q-Learning</a></h2>
+    <h2><a href="/post/gaussian-processes/gaussian-processes/">Introduction to Multi-task Gaussian Processes</a></h2>
     <div class="article-style">
       
-      Introduction Implementing single-agent reinforcement learning methods in multi-agent settings where both agents update their values simultaneously is a generally naive method which does not result in convergent policies. Hu and Wellman (2003) attribute this to a neglect of two issues specific to the multi-agent context. Firstly, the environment is no longer stationary since the agents are simultaneously adapting; the result of an agent's choice is going to change based on the choice of the other agents.
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/project/rl-dp/">RL in Dynamic Pricing</a></h2>
-    <div class="article-style">
-      
-      Repeated interactions with the environment allow firms to choose prices optimally with uncertain demand.
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/project/simultaneous-q/">Simultaneous Q-Learning</a></h2>
-    <div class="article-style">
-      
-      Investigating the properties of a non-stationary RL environment.
+      A significant part of scientific literature focuses on fitting and predicting from an unknown function. When the function is complex, does not have a closed-form solution or is 'blackbox', a strategy is required to fit such a function with limited prior information. Bayesian optimisation is a class of machine learning-based optimisation methods focused on such a problem, which is characterised by the objective
+\[\max_x f(x)\]
+In these cases, although the true function $f$ is unknown, we can use existing prior knowledge about its properties, such as smoothness, which makes some objective functions more applicable than others in the specific problem.
       
     </div>
   </div>

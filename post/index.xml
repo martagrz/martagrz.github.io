@@ -13,7 +13,7 @@
     </image>
     
     <item>
-      <title>Implementing Nash-Q Learning</title>
+      <title>Implementing Nash Q-Learning</title>
       <link>https://martagrz.github.io/post/nash-q/nash-q/</link>
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
       <guid>https://martagrz.github.io/post/nash-q/nash-q/</guid>
@@ -47,7 +47,53 @@
 
 &lt;h3 id=&#34;implementation&#34;&gt;Implementation&lt;/h3&gt;
 
-&lt;p&gt;For the full implementation, see the &lt;a href=&#34;https://github.com/martagrz/multi-agent-reinforcement-learning&#34;&gt;github repo&lt;/a&gt;. In a 4x4 grid, we train two players at starting points (0, 0) and (0, 2) with goals at (3, 2) and (3, 3), respectively. Actions are chosen based on an $\epsilon$-greedy algorithm, with $\epsilon =0.2$, the learning rate is $\alpha=0.2$, the discount rate is $\gamma=0.6$. We train at these values for 1,000 episodes. The quiver plots of the optimal actions at all possible states for both players are shown below.&lt;/p&gt;
+&lt;p&gt;For the full implementation, see the &lt;a href=&#34;https://github.com/martagrz/multi-agent-reinforcement-learning&#34;&gt;github repo&lt;/a&gt;. In a 4x4 grid, we train two players at starting points (0, 0) and (0, 2) with goals at (3, 2) and (3, 3), respectively. Actions are chosen based on an $\epsilon$-greedy algorithm, with $\epsilon =0.2$, the learning rate is $\alpha=0.2$, the discount rate is $\gamma=0.6$. We train at these values for 1,000 episodes.&lt;/p&gt;
+
+&lt;p&gt;The Nash equilibirum is obtained through the &lt;code&gt;get_policies&lt;/code&gt; function defined below. It uses the beliefs of the current player to select the best actions for the other players, knowing that all players use an $\epsilon$-greedy policy.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;get_policies&lt;/span&gt;(self, player, state, greedy&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;False):
+    policies &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ones(len(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;env&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;actions))
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; other_player &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;env&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;n_players):
+        state_index &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get_index(state[other_player])
+        greedy_action &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;argmax(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;q_tables[player, other_player, state_index])
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; greedy:
+            action_probability_distribution &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ones(len(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;env&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;actions))
+            action_probability_distribution &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;epsilon &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; len(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;env&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;actions)
+            action_probability_distribution[greedy_action] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;epsilon
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+            action_probability_distribution &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;zeros(len(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;env&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;actions))
+            action_probability_distribution[greedy_action] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+        policies &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dot(policies, action_probability_distribution)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; policies&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This function is then used in the training, where each episode uses the &lt;code&gt;while&lt;/code&gt; loop shown below.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; done&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;all():
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; player &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;env&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;n_players):
+        current_state_index &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get_index(state[player])
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; done[player]:
+            actions[player] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;int(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;choose_action(player, current_state_index))
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+            actions[player] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;
+    next_state, rewards, done &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;env&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;step(state, actions)
+    
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; n &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;env&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;n_players):
+        policies &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get_policies(n, next_state)
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; done[n]:
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; m &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;env&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;n_players):
+                current_state_index &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get_index(state[m])
+                next_state_index &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get_index(next_state[m])
+                next_state_q &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;q_tables[n, m, next_state_index]
+                nash_q &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dot(policies, next_state_q)
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; m &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; n:
+                    reward &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; rewards[m] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;normal(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;error_variance)
+                    value &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;alpha) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;q_tables[n, m, current_state_index, actions[m]] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; \
+                                self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;alpha &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; (reward &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;gamma &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; nash_q)
+    
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+                    value &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;alpha) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;q_tables[n, m, current_state_index, actions[m]] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; \
+                                self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;alpha &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; (rewards[m] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;gamma &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; nash_q)
+                self&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;q_tables[n, m, current_state_index, actions[m]] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; value
+
+state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; next_state&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The quiver plots of the optimal actions at all possible states for both players are shown below.&lt;/p&gt;
 
 &lt;p&gt;&lt;figure&gt;&lt;img src=&#34;https://martagrz.github.io/img/posts/nash-q/optimal_policy_0.png&#34; alt=&#34;Optimal policies&#34;&gt;&lt;/figure&gt;&lt;/p&gt;
 
