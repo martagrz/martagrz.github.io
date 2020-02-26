@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recommender Systems | Marta Grześkiewicz</title>
+    <link>https://martagrz.github.io/tags/recommender-systems/</link>
+      <atom:link href="https://martagrz.github.io/tags/recommender-systems/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recommender Systems</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 18 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://martagrz.github.io/img/icon-192.png</url>
+      <title>Recommender Systems</title>
+      <link>https://martagrz.github.io/tags/recommender-systems/</link>
+    </image>
+    
+    <item>
+      <title>Hierarchical Reinforcement Learning</title>
+      <link>https://martagrz.github.io/project/hierarchical-rl/</link>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://martagrz.github.io/project/hierarchical-rl/</guid>
+      <description>&lt;p&gt;Recommender systems often use multiple layers to present the user with items they might like. In Spotify, the carousel of recommended playlists are under a title based on the user&amp;rsquo;s previous behaviour (for example &amp;ldquo;Because you listened to &amp;hellip;&amp;quot;) and each carousel has multiple items. This lends itself to a hierarchical reinforcement learning algorithm for recommenders; first, the title is chosen, then the relevant playlists are chosen based on the title.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

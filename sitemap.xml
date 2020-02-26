@@ -63,7 +63,17 @@
   </url>
   
   <url>
+    <loc>https://martagrz.github.io/project/hierarchical-rl/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://martagrz.github.io/post/gaussian-processes/</loc>
+    <lastmod>2020-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/project/simultaneous-q/</loc>
     <lastmod>2020-02-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -78,12 +88,12 @@
   </url>
   
   <url>
-    <loc>https://martagrz.github.io/project/rl-dp/</loc>
+    <loc>https://martagrz.github.io/tags/recommender-systems/</loc>
     <lastmod>2020-02-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://martagrz.github.io/project/simultaneous-q/</loc>
+    <loc>https://martagrz.github.io/project/rl-dp/</loc>
     <lastmod>2020-02-18T00:00:00+00:00</lastmod>
   </url>
   

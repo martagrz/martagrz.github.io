@@ -180,6 +180,15 @@ state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; next_state&lt;/co
     </item>
     
     <item>
+      <title>Hierarchical Reinforcement Learning</title>
+      <link>https://martagrz.github.io/project/hierarchical-rl/</link>
+      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://martagrz.github.io/project/hierarchical-rl/</guid>
+      <description>&lt;p&gt;Recommender systems often use multiple layers to present the user with items they might like. In Spotify, the carousel of recommended playlists are under a title based on the user&amp;rsquo;s previous behaviour (for example &amp;ldquo;Because you listened to &amp;hellip;&amp;quot;) and each carousel has multiple items. This lends itself to a hierarchical reinforcement learning algorithm for recommenders; first, the title is chosen, then the relevant playlists are chosen based on the title.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Introduction to Multi-task Gaussian Processes</title>
       <link>https://martagrz.github.io/post/gaussian-processes/</link>
       <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
@@ -378,20 +387,20 @@ plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()&lt;/code&gt;&l
     </item>
     
     <item>
-      <title>RL in Dynamic Pricing</title>
-      <link>https://martagrz.github.io/project/rl-dp/</link>
+      <title>Multi-Agent Q-Learning</title>
+      <link>https://martagrz.github.io/project/simultaneous-q/</link>
       <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://martagrz.github.io/project/rl-dp/</guid>
-      <description>&lt;p&gt;Dynamic pricing relates to the set of problems where firms are required to set prices in response to state variables to maximise their revenue. Traditional approaches assume a functional form of the demand function and optimise for its parameters to find the optimal pricing solution. Reinforcement learning is a powerful tool, suitable for learning pricing policies under uncertainty of the reward function. It is a non-parametric method where a functional form of the function does not have to be assumed and the relationship is learned by trial and error. Under the conditions of uncertain demand, it is appropriate to apply reinforcement learning methods to dynamic pricing problems.&lt;/p&gt;
+      <guid>https://martagrz.github.io/project/simultaneous-q/</guid>
+      <description>&lt;p&gt;Multiple agents learning at the same time using a value-based approach leads to a non-stationary environment since it is constantly changing based on the opponent&amp;rsquo;s actions. I am investigating this system, including the combination of game theoretic methods and algorithms to maintain structure in this seemingly chaotic system.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Simultaneous Q-Learning</title>
-      <link>https://martagrz.github.io/project/simultaneous-q/</link>
+      <title>Reinforcement Learning in Dynamic Pricing</title>
+      <link>https://martagrz.github.io/project/rl-dp/</link>
       <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://martagrz.github.io/project/simultaneous-q/</guid>
-      <description>&lt;p&gt;Multiple agents learning at the same time using a value-based approach leads to a non-stationary environment since it is constantly changing based on the opponent&amp;rsquo;s actions. I am investigating this system, including possible conditions on convergence and properties of this seemingly chaotic system.&lt;/p&gt;
+      <guid>https://martagrz.github.io/project/rl-dp/</guid>
+      <description>&lt;p&gt;Dynamic pricing relates to the set of problems where firms are required to set prices in response to state variables to maximise their revenue. Traditional approaches assume a functional form of the demand function and optimise for its parameters to find the optimal pricing solution. Reinforcement learning is a powerful tool, suitable for learning pricing policies under uncertainty of the reward function. It is a non-parametric method where a functional form of the function does not have to be assumed and the relationship is learned by trial and error. Under the conditions of uncertain demand, it is appropriate to apply reinforcement learning methods to dynamic pricing problems.&lt;/p&gt;
 </description>
     </item>
     
