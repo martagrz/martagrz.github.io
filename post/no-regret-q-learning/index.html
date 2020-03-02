@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Introduction When a single-agent is required to learn in a partially observable environment, we rely on a global belief state, meaning given the partially observable state $s$ we can infer the global environment based on a model. In a multi-agent setting, however, this is no longer a sufficient statistic since each agent has a local observation of their own state and no information about the states of the other agents. In general, this setting can be modelled by a decentralised POMDP (Dec-POMDP) (Oliehoek and Amato, 2016), which shares almost all elements such as the reward function and the transition model, as the multi-agent MDP (MMDP), except that each agent now only has its local observations of the system state $s$.">
+  <meta name="description" content="Introduction Policy-based reinforcement learning methods used in single-agent environments can be extended to the multi-agent setting, mainly through self-play, where the agent learns how to play a game by repeatedly playing itself. These methods aim to achieve optimal performance when other agents play arbitrarily by minimising the (external) regret, meaning that the mixed policy chosen has to be at least as good as any fixed policy available to the agent in hindsight.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://martagrz.github.io/post/dec-pomdp/">
+  <link rel="alternate" hreflang="en-us" href="https://martagrz.github.io/post/no-regret-q-learning/">
 
   
 
@@ -100,7 +100,7 @@
   <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://martagrz.github.io/post/dec-pomdp/">
+  <link rel="canonical" href="https://martagrz.github.io/post/no-regret-q-learning/">
 
   
   
@@ -113,15 +113,15 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Marta Grześkiewicz">
-  <meta property="og:url" content="https://martagrz.github.io/post/dec-pomdp/">
-  <meta property="og:title" content="Note on partial observability in multi-agent systems: Dec-POMDP | Marta Grześkiewicz">
-  <meta property="og:description" content="Introduction When a single-agent is required to learn in a partially observable environment, we rely on a global belief state, meaning given the partially observable state $s$ we can infer the global environment based on a model. In a multi-agent setting, however, this is no longer a sufficient statistic since each agent has a local observation of their own state and no information about the states of the other agents. In general, this setting can be modelled by a decentralised POMDP (Dec-POMDP) (Oliehoek and Amato, 2016), which shares almost all elements such as the reward function and the transition model, as the multi-agent MDP (MMDP), except that each agent now only has its local observations of the system state $s$."><meta property="og:image" content="https://martagrz.github.io/img/icon-192.png">
+  <meta property="og:url" content="https://martagrz.github.io/post/no-regret-q-learning/">
+  <meta property="og:title" content="On Combining Q-Learning and No-Regret Learning | Marta Grześkiewicz">
+  <meta property="og:description" content="Introduction Policy-based reinforcement learning methods used in single-agent environments can be extended to the multi-agent setting, mainly through self-play, where the agent learns how to play a game by repeatedly playing itself. These methods aim to achieve optimal performance when other agents play arbitrarily by minimising the (external) regret, meaning that the mixed policy chosen has to be at least as good as any fixed policy available to the agent in hindsight."><meta property="og:image" content="https://martagrz.github.io/img/icon-192.png">
   <meta property="twitter:image" content="https://martagrz.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-02-25T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2020-03-02T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-02-25T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2020-03-02T00:00:00&#43;00:00">
   
 
   
@@ -147,12 +147,12 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://martagrz.github.io/post/dec-pomdp/"
+    "@id": "https://martagrz.github.io/post/no-regret-q-learning/"
   },
-  "headline": "Note on partial observability in multi-agent systems: Dec-POMDP",
+  "headline": "On Combining Q-Learning and No-Regret Learning",
   
-  "datePublished": "2020-02-25T00:00:00Z",
-  "dateModified": "2020-02-25T00:00:00Z",
+  "datePublished": "2020-03-02T00:00:00Z",
+  "dateModified": "2020-03-02T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -167,7 +167,7 @@
       "url": "https://martagrz.github.io/img/icon-512.png"
     }
   },
-  "description": "Introduction When a single-agent is required to learn in a partially observable environment, we rely on a global belief state, meaning given the partially observable state $s$ we can infer the global environment based on a model. In a multi-agent setting, however, this is no longer a sufficient statistic since each agent has a local observation of their own state and no information about the states of the other agents. In general, this setting can be modelled by a decentralised POMDP (Dec-POMDP) (Oliehoek and Amato, 2016), which shares almost all elements such as the reward function and the transition model, as the multi-agent MDP (MMDP), except that each agent now only has its local observations of the system state $s$."
+  "description": "Introduction Policy-based reinforcement learning methods used in single-agent environments can be extended to the multi-agent setting, mainly through self-play, where the agent learns how to play a game by repeatedly playing itself. These methods aim to achieve optimal performance when other agents play arbitrarily by minimising the (external) regret, meaning that the mixed policy chosen has to be at least as good as any fixed policy available to the agent in hindsight."
 }
 </script>
 
@@ -185,7 +185,7 @@
 
 
 
-  <title>Note on partial observability in multi-agent systems: Dec-POMDP | Marta Grześkiewicz</title>
+  <title>On Combining Q-Learning and No-Regret Learning | Marta Grześkiewicz</title>
 
 </head>
 
@@ -412,7 +412,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Note on partial observability in multi-agent systems: Dec-POMDP</h1>
+  <h1>On Combining Q-Learning and No-Regret Learning</h1>
 
   
 
@@ -431,7 +431,7 @@
     
       
     
-    Feb 25, 2020
+    Mar 2, 2020
   </span>
   
 
@@ -440,7 +440,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    4 min read
+    5 min read
   </span>
   
 
@@ -476,41 +476,73 @@
   <div class="article-container">
 
     <div class="article-style">
-      <h3 id="introduction">Introduction</h3>
+      <h1 id="introduction">Introduction</h1>
 
-<p>When a single-agent is required to learn in a partially observable environment, we rely on a global belief state, meaning given the partially observable state $s$ we can infer the global environment based on a model. In a multi-agent setting, however, this is no longer a sufficient statistic since each agent has a local observation of their own state and no information about the states of the other agents. In general, this setting can be modelled by a decentralised POMDP (Dec-POMDP) (Oliehoek and Amato, 2016), which shares almost all elements such as the reward function and the transition model, as the multi-agent MDP (MMDP), except that each agent now only has its local observations of the system state $s$. With no accessibility to other agents’ observations, an individual agent cannot maintain a global belief state, the sufficient statistic for decision making in single-agent POMDPs.</p>
+<p>Policy-based reinforcement learning methods used in single-agent environments can be extended to the multi-agent setting, mainly through <strong>self-play</strong>, where the agent learns how to play a game by repeatedly playing itself. These methods aim to achieve optimal performance when other agents play arbitrarily by minimising the (external) regret, meaning that the mixed policy chosen has to be at least as good as any fixed policy available to the agent in hindsight. An algorithm with negligible average overall regret is called no-regret or Hannan-consistent. There are two main families of Hannan-consistent multi-agent reinforcement learning methods with a two-player zero-sum game: fictitious play and counterfactual regret minimisation. Here, we focus on the latter.</p>
 
-<p>Most algorithms applied in this setting assume co-operation between the agents, as opposed to competitive, zero-sum or mixed, general-sum games, and are based on a centralised-learning-decentralised-execution method. Centralisation means a central controller observes all the states, actions and rewards and makes action choices for each agent, whereas decentralisation means that each agent is autonomous and observes only their own states and rewards. This method first reformulates the problem as a centralised one using a simulator that generates the observation data of all agents. The policies are then optimised using this data and distributed to all agents for execution.</p>
+<h2 id="counterfactual-regret-minimisation">Counterfactual regret minimisation</h2>
 
-<h3 id="definition">Definition</h3>
+<p>Counterfactual regret minimisation (CFR) (Zinkevich et al, 2008) is a framework for solving extensive-form games with incomplete information which establishes explicit bounds on performance, which yield rates of convergence to the Nash equilibrium. It relies on self-play algorithms, implying that the game should be <strong>symmetric</strong> (both agents have the same set of actions, states and rewards).</p>
 
-<p>A decentralised partially observable MDP (Dec-POMDP) is a tuple <span  class="math">\(\langle I, S, \{ A_i \}, P, \{ \Omega_i \}, O, R, h \rangle\)</span> where</p>
+<p>The methods under this framework rely on a no-regret algorithm to select actions. In a CFR framework, one copy of such an algorithm is used at each information set (set of states that contain the same information), which corresponds to a full history of play observed by a single agent. In a perfect information case, the information set is a singleton, whereas in the imperfect information set there is more than one element in the set and the agents cannot distinguish between histories of the same information set. In either case, the resulting algorithm satisfies the global no-regret guarantee, so at least in two-player zero-sum games it is guaranteed to converge to an optimal strategy through sufficient self-play.</p>
+
+<p>CFR relies on two strong assumptions: perfect recall, such that the agents remember exactly the states and actions chosen, and that a terminal state is eventually reached in each iteration. Additionally, a drawback of the vanilla CFR method is that the entire game tree needs to be traversed in each iteration, which is computationally expensive. For a thorough explanation on CFR see <a href="https://www.quora.com/What-is-an-intuitive-explanation-of-counterfactual-regret-minimization">this post</a> by Michael Johanson, one of authors on the original paper.</p>
+
+<h1 id="method">Method</h1>
+
+<h2 id="setup">Set-up</h2>
+
+<p>Consider a Markov Decision Process (MDP) $M = \langle S, A, P, R, \gamma \rangle$, where $S$ is the state space, $A$ is the (finite) action space, $P : S \times A \rightarrow \Delta(S)$ is the transition probability, $R : S \times A \rightarrow \mathbb{R}$ is the (expected) reward function, assumed to be bounded, and $\gamma \in (0,1)$ is the discount rate. Q-value iteration is an operator $\mathcal{T}$ , whose domain is bounded real-valued functions over $S \times A$, defined as</p>
+
+<p><span  class="math">\[ \mathcal{T} Q(s,a) = r(s,a) + \gamma \mathbb{E}_{P} \left[ \max_{a' \in A} Q(s',a') \right]\]</span></p>
+
+<p>This operator is a contraction map in <span  class="math">\(||\cdot ||_{\infty}\)</span>, and so converges to a unique fixed point <span  class="math">\(Q^*\)</span>, where <span  class="math">\(Q^*(s, a)\)</span> gives the expected value of the MDP starting from state $s$, taking action $a$, and thereafter following the optimal policy <span  class="math">\(\pi^*(s) = \arg \max_{a \in A} Q^*(s,a)\)</span>.</p>
+
+<p>A regret-minimisation problem considers a single decision-maker playing a game against an adversary. Consider a set of $n$ actions $a_1, \dots, a_n$ and the following game setup:</p>
 
 <ul>
-<li>$I$ is a finite set of agents indexed $1,\dots, n$</li>
-<li>$S$ is a finite set of states, with distinguished initial state $s_0$</li>
-<li><span  class="math">\(A_i\)</span> is a finite set of actions available to agent $i$, and $\overrightarrow{A} = \otimes_{i \in I} A_i$ is the set of joint actions</li>
-<li>$P : S \times \overrightarrow{A}  \rightarrow \Delta(S)$ is a Markovian transition function, where $P(s' | s, \overrightarrow{a})$ denotes the probability that after taking joint action $\overrightarrow{a} $ in state $s$ a transition to state $s'$ occurs</li>
-<li><span  class="math">\(\Omega_i\)</span> is a finite set of observations available to agent $i$, and $\overrightarrow{\Omega}  = \otimes_{i \in I} \Omega_i$ is the set of joint observations</li>
-<li>$O : \overrightarrow{A}  \times S \rightarrow \Delta(\overrightarrow{\Omega})$ is an observation function. $O(\overrightarrow{o}|\overrightarrow{a} , s')$ denotes the probability of observing joint observation $\overrightarrow{o}$ given that joint action $\overrightarrow{a}$ was taken and led to state $s'$</li>
-<li>$R : \overrightarrow{A} \times S \rightarrow \mathbb{R}$ is a reward function. $R(\overrightarrow{a}, s')$ denotes the reward obtained after joint action $\overrightarrow{a}$ was taken and a state transition to $s'$ occurred</li>
-<li>If the Dec-POMDP has a finite horizon, that horizon is represented by a positive integer $h$</li>
+<li>At time $t=0,1,\dots,T$:
+
+<ul>
+<li>A decision maker picks a mixed strategy $\pi_t$ (probability distribution over its actions $A$).</li>
+<li>An adversary picks a (bounded) cost vector, $c_t(a)$, for each action.</li>
+<li>An action $a_t$ is chosen according to the distribution $\pi_t$ and the decision maker incurs a cost <span  class="math">\(c_t(a_t)\)</span>. The decision maker learns the entire cost vector $c_t$ not just the realised cost.<br>
+<br></li>
+</ul></li>
 </ul>
 
-<h3 id="comments">Comments</h3>
+<p>We are not able to compare the cost of online decision-making to the cost of the best action sequence in hindsight - the benchmark of <span  class="math">\(\sum^T_{t=0} \min_{a \in A}c_t(a)\)</span> is not achievable. Rather than comparing the expected cost of an algorithm to that of the best action <em>sequence</em> in hindsight, we compare it to the cost incurred by the best <em>fixed action</em> in hindsight. So, the benchmark becomes <span  class="math">\(\min_{a\in A} \sum^T_{t=0} c_t(a)\)</span>.  The time-averaged (external) regret of the action sequence $a_1, \dots, a_T$ with respect to the action $a$ is</p>
 
-<p>Dec-POMDPs have been shown to be NEXP-hard (Bernstein et al, 2002) and require super-exponential time to solve in the worst case. There have been multiple methods improving on this, including Monte Carlo sampling with policy iteration and the expectation-maximisation algorithm in Wu et al. (2010) and Wu et al. (2013).</p>
+<p><span  class="math">\[ \frac{1}{T+1} \left[ \sum_{t=0}^T c_t(a_t) - \sum_{i=0}^T c_t(a)  \right] \]</span></p>
 
-<h3 id="references">References</h3>
+<h2 id="noregret-learning">No-Regret Learning</h2>
+
+<p>An algorithm is <strong>no-regret</strong> if there is a sequence of constants $\rho_t$ such that regardless of the adversary, the regret at time $t$ is at most <span  class="math">\(\rho_t\)</span> and <span  class="math">\(\lim_{t \rightarrow \infty} \rho_t = 0\)</span>. A common bound is $O(1/\sqrt{k})$. An algorithm is <strong>no-absolute-regret</strong> if the regret is bounded by $||\rho_t||$, whereas it is <strong>non-negative-regret</strong> if regret is bounded by $(0,\rho_t)$.</p>
+
+<h3 id="local-noregret-learning-lonr">Local No-Regret Learning (LONR)</h3>
+
+<p>This is the algorithm proposed by Kash et al (2019). It is summarised as follows:</p>
 
 <ul>
-<li>Spaan, M., Amato, C., Zilberstein, S., 2011, Decision Making in Multiagent Settings: Team Decision Making, <em>AAMAS11 Tutorial</em>, <a href="http://users.isr.ist.utl.pt/~mtjspaan/tutorialDMMS/tutorialAAMAS11.pdf">url</a></li>
-<li>Oliehoek, F.A. and Amato, C., 2016. A concise introduction to decentralized POMDPs (Vol. 1). <em>Springer International Publishing</em>.</li>
-<li>Bernstein, D.S., Givan, R., Immerman, N. and Zilberstein, S., 2002. The complexity of decentralized control of Markov decision processes. <em>Mathematics of operations research</em>, 27(4), pp.819-840.</li>
-<li>Zhang, K., Yang, Z. and Başar, T., 2019. Multi-Agent Reinforcement Learning: A Selective Overview of Theories and Algorithms. <em>arXiv preprint arXiv:1911.10635.</em></li>
-<li>Wu, F., Zilberstein, S. and Chen, X., 2010, May. Point-based policy generation for decentralized POMDPs. In <em>AAMAS</em> (pp. 1307-1314).</li>
-<li>Wu, F., Zilberstein, S. and Jennings, N.R., 2013, June. Monte-Carlo expectation maximization for decentralized POMDPs. In <em>Twenty-Third International Joint Conference on Artificial Intelligence</em>.</li>
-<li>Omidshafiei, S., Pazis, J., Amato, C., How, J.P. and Vian, J., 2017, August. Deep decentralized multi-task multi-agent reinforcement learning under partial observability. In <em>Proceedings of the 34th International Conference on Machine Learning-Volume 70</em> (pp. 2681-2690).</li>
+<li>Initialise matrix $Q_0$</li>
+<li>Initialise $|S|$ copies of the no-absolute-regret algorithm (one for each state) and find the optimal policy $\pi_0$ for current state $s$.</li>
+<li>Iteratively reveal costs to the copy of the algorithm for $s$ as <span  class="math">\(c_t(a) = Q_t(s,a)\)</span>, and update the policy $\pi_{t+1}$ according to the algorithm and the update rule</li>
+</ul>
+
+<p><span  class="math">\[Q_{t+1} (s,a) = r(s,a) + \gamma \mathbb{E}_{P, \pi_k} \left[ Q_t(s',a') \right]\]</span></p>
+
+<h1 id="comments">Comments</h1>
+
+<p>In the way it is currently presented, the above method is not suitable for a reinforcement learning environment since it assumes knowledge of transition probabilities, which an agent does not normally have (at least in model-free settings). In order to implement this in an MDP or Markov game setting with reinforcement learning, we have to make some adjustments to the specification. In order to implement, we need to specify a no-regret algorithm such as multiplicative weights or regret matching.</p>
+
+<p>The combination of Q-learning and no-regret has been proven only for a single agent in an MDP setting; the method has been shown experimentally to work in Markov games, but convergence is yet to be verified.</p>
+
+<h1 id="references">References</h1>
+
+<ul>
+<li>Roughgarden T., CS364A: Algorithmic Game Theory Lecture #17: No-Regret Dynamics, <a href="http://timroughgarden.org/f13/l/l17.pdf">url</a></li>
+<li>Kash, I.A., Sullins, M. and Hofmann, K., 2019. Combining No-regret and Q-learning. <em>arXiv preprint arXiv:1910.03094.</em></li>
+<li>Zinkevich, M., Johanson, M., Bowling, M. and Piccione, C., 2008. Regret minimization in games with incomplete information. In <em>Advances in Neural Information Processing Systems</em> (pp. 1729-1736).</li>
 </ul>
 
     </div>
@@ -523,9 +555,11 @@
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tags/reinforcement-learning/">Reinforcement Learning</a>
+  <a class="badge badge-light" href="/tags/q-learning/">Q-Learning</a>
   
-  <a class="badge badge-light" href="/tags/partial-observability/">Partial Observability</a>
+  <a class="badge badge-light" href="/tags/multi-agent/">Multi-Agent</a>
+  
+  <a class="badge badge-light" href="/tags/no-regret-learning/">No-Regret Learning</a>
   
 </div>
 
@@ -542,7 +576,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://martagrz.github.io/post/dec-pomdp/&amp;text=Note%20on%20partial%20observability%20in%20multi-agent%20systems:%20Dec-POMDP" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://martagrz.github.io/post/no-regret-q-learning/&amp;text=On%20Combining%20Q-Learning%20and%20No-Regret%20Learning" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -555,7 +589,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://martagrz.github.io/post/dec-pomdp/&amp;t=Note%20on%20partial%20observability%20in%20multi-agent%20systems:%20Dec-POMDP" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://martagrz.github.io/post/no-regret-q-learning/&amp;t=On%20Combining%20Q-Learning%20and%20No-Regret%20Learning" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -568,7 +602,7 @@
       
       
       <li>
-        <a href="mailto:?subject=Note%20on%20partial%20observability%20in%20multi-agent%20systems:%20Dec-POMDP&amp;body=https://martagrz.github.io/post/dec-pomdp/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=On%20Combining%20Q-Learning%20and%20No-Regret%20Learning&amp;body=https://martagrz.github.io/post/no-regret-q-learning/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -581,7 +615,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://martagrz.github.io/post/dec-pomdp/&amp;title=Note%20on%20partial%20observability%20in%20multi-agent%20systems:%20Dec-POMDP" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://martagrz.github.io/post/no-regret-q-learning/&amp;title=On%20Combining%20Q-Learning%20and%20No-Regret%20Learning" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -594,7 +628,7 @@
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Note%20on%20partial%20observability%20in%20multi-agent%20systems:%20Dec-POMDP%20https://martagrz.github.io/post/dec-pomdp/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=On%20Combining%20Q-Learning%20and%20No-Regret%20Learning%20https://martagrz.github.io/post/no-regret-q-learning/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -607,7 +641,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://martagrz.github.io/post/dec-pomdp/&amp;title=Note%20on%20partial%20observability%20in%20multi-agent%20systems:%20Dec-POMDP" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://martagrz.github.io/post/no-regret-q-learning/&amp;title=On%20Combining%20Q-Learning%20and%20No-Regret%20Learning" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -720,15 +754,8 @@
   
   
   <div class="post-nav-item">
-    <div class="meta-nav">Next</div>
-    <a href="/post/no-regret-q-learning/" rel="next">On Combining Q-Learning and No-Regret Learning</a>
-  </div>
-  
-  
-  
-  <div class="post-nav-item">
     <div class="meta-nav">Previous</div>
-    <a href="/post/nash-q/" rel="prev">Implementing Nash Q-Learning</a>
+    <a href="/post/dec-pomdp/" rel="prev">Note on partial observability in multi-agent systems: Dec-POMDP</a>
   </div>
   
 </div>
@@ -744,8 +771,6 @@
     <ul>
       
       <li><a href="/post/nash-q/">Implementing Nash Q-Learning</a></li>
-      
-      <li><a href="/project/hierarchical-rl/">Hierarchical Reinforcement Learning</a></li>
       
     </ul>
   </div>

@@ -4,7 +4,37 @@
   
   <url>
     <loc>https://martagrz.github.io/</loc>
-    <lastmod>2020-02-25T00:00:00+00:00</lastmod>
+    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/tags/multi-agent/</loc>
+    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/tags/no-regret-learning/</loc>
+    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/post/no-regret-q-learning/</loc>
+    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/post/</loc>
+    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/tags/q-learning/</loc>
+    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/tags/</loc>
+    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -18,17 +48,7 @@
   </url>
   
   <url>
-    <loc>https://martagrz.github.io/post/</loc>
-    <lastmod>2020-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://martagrz.github.io/tags/reinforcement-learning/</loc>
-    <lastmod>2020-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://martagrz.github.io/tags/</loc>
     <lastmod>2020-02-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -39,16 +59,6 @@
   
   <url>
     <loc>https://martagrz.github.io/post/nash-q/</loc>
-    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://martagrz.github.io/tags/multi-agent/</loc>
-    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://martagrz.github.io/tags/q-learning/</loc>
     <lastmod>2020-02-24T00:00:00+00:00</lastmod>
   </url>
   
