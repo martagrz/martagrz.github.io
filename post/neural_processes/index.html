@@ -601,7 +601,7 @@ observation noise <span  class="math">\(Y_i \sim \mathcal{N} (F(x_i), \sigma^2)\
         mu, log_sigma <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>split(params_decoder,<span style="color:#ae81ff">2</span>,axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
         mse <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>reduce_mean(tf<span style="color:#f92672">.</span>math<span style="color:#f92672">.</span>square(y_target <span style="color:#f92672">-</span> mu))
         <span style="color:#66d9ef">return</span> tf<span style="color:#f92672">.</span>math<span style="color:#f92672">.</span>sqrt(mse)</code></pre></div>
-<p>That is it! Those are all the parts required to implement the NP.</p>
+<p>That is it! Those are all the parts required to implement the NP. See <a href="https://github.com/martagrz/neural-processes/tree/master/neural-processes">github</a> for the full implementation.</p>
 
 <h1 id="references">References</h1>
 

@@ -142,7 +142,7 @@ observation noise &lt;span  class=&#34;math&#34;&gt;\(Y_i \sim \mathcal{N} (F(x_
         mu, log_sigma &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; tf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(params_decoder,&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;,axis&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
         mse &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; tf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;reduce_mean(tf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;math&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;square(y_target &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; mu))
         &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; tf&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;math&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sqrt(mse)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;That is it! Those are all the parts required to implement the NP.&lt;/p&gt;
+&lt;p&gt;That is it! Those are all the parts required to implement the NP. See &lt;a href=&#34;https://github.com/martagrz/neural-processes/tree/master/neural-processes&#34;&gt;github&lt;/a&gt; for the full implementation.&lt;/p&gt;
 
 &lt;h1 id=&#34;references&#34;&gt;References&lt;/h1&gt;
 
