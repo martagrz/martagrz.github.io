@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Marta Grześkiewicz</title>
-    <link>https://martagrz.github.io/</link>
-      <atom:link href="https://martagrz.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <description>Marta Grześkiewicz</description>
+    <title>Implementation | Marta Grześkiewicz</title>
+    <link>https://martagrz.github.io/tags/implementation/</link>
+      <atom:link href="https://martagrz.github.io/tags/implementation/index.xml" rel="self" type="application/rss+xml" />
+    <description>Implementation</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 06 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://martagrz.github.io/img/icon-192.png</url>
-      <title>Marta Grześkiewicz</title>
-      <link>https://martagrz.github.io/</link>
+      <title>Implementation</title>
+      <link>https://martagrz.github.io/tags/implementation/</link>
     </image>
     
     <item>
@@ -153,126 +153,6 @@ observation noise &lt;span  class=&#34;math&#34;&gt;\(Y_i \sim \mathcal{N} (F(x_
     </item>
     
     <item>
-      <title>On Combining Q-Learning and No-Regret Learning</title>
-      <link>https://martagrz.github.io/post/no-regret-q-learning/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>https://martagrz.github.io/post/no-regret-q-learning/</guid>
-      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
-
-&lt;p&gt;Policy-based reinforcement learning methods used in single-agent environments can be extended to the multi-agent setting, mainly through &lt;strong&gt;self-play&lt;/strong&gt;, where the agent learns how to play a game by repeatedly playing itself. These methods aim to achieve optimal performance when other agents play arbitrarily by minimising the (external) regret, meaning that the mixed policy chosen has to be at least as good as any fixed policy available to the agent in hindsight. An algorithm with negligible average overall regret is called no-regret or Hannan-consistent. There are two main families of Hannan-consistent multi-agent reinforcement learning methods with a two-player zero-sum game: fictitious play and counterfactual regret minimisation. Here, we focus on the latter.&lt;/p&gt;
-
-&lt;h2 id=&#34;counterfactual-regret-minimisation&#34;&gt;Counterfactual regret minimisation&lt;/h2&gt;
-
-&lt;p&gt;Counterfactual regret minimisation (CFR) (Zinkevich et al, 2008) is a framework for solving extensive-form games with incomplete information which establishes explicit bounds on performance, which yield rates of convergence to the Nash equilibrium. It relies on self-play algorithms, implying that the game should be &lt;strong&gt;symmetric&lt;/strong&gt; (both agents have the same set of actions, states and rewards).&lt;/p&gt;
-
-&lt;p&gt;The methods under this framework rely on a no-regret algorithm to select actions. In a CFR framework, one copy of such an algorithm is used at each information set (set of states that contain the same information), which corresponds to a full history of play observed by a single agent. In a perfect information case, the information set is a singleton, whereas in the imperfect information set there is more than one element in the set and the agents cannot distinguish between histories of the same information set. In either case, the resulting algorithm satisfies the global no-regret guarantee, so at least in two-player zero-sum games it is guaranteed to converge to an optimal strategy through sufficient self-play.&lt;/p&gt;
-
-&lt;p&gt;CFR relies on two strong assumptions: perfect recall, such that the agents remember exactly the states and actions chosen, and that a terminal state is eventually reached in each iteration. Additionally, a drawback of the vanilla CFR method is that the entire game tree needs to be traversed in each iteration, which is computationally expensive. For a thorough explanation on CFR see &lt;a href=&#34;https://www.quora.com/What-is-an-intuitive-explanation-of-counterfactual-regret-minimization&#34;&gt;this post&lt;/a&gt; by Michael Johanson, one of authors on the original paper.&lt;/p&gt;
-
-&lt;h1 id=&#34;method&#34;&gt;Method&lt;/h1&gt;
-
-&lt;h2 id=&#34;setup&#34;&gt;Set-up&lt;/h2&gt;
-
-&lt;p&gt;Consider a Markov Decision Process (MDP) $M = \langle S, A, P, R, \gamma \rangle$, where $S$ is the state space, $A$ is the (finite) action space, $P : S \times A \rightarrow \Delta(S)$ is the transition probability, $R : S \times A \rightarrow \mathbb{R}$ is the (expected) reward function, assumed to be bounded, and $\gamma \in (0,1)$ is the discount rate. Q-value iteration is an operator $\mathcal{T}$ , whose domain is bounded real-valued functions over $S \times A$, defined as&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[ \mathcal{T} Q(s,a) = r(s,a) + \gamma \mathbb{E}_{P} \left[ \max_{a&#39; \in A} Q(s&#39;,a&#39;) \right]\]&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;This operator is a contraction map in &lt;span  class=&#34;math&#34;&gt;\(||\cdot ||_{\infty}\)&lt;/span&gt;, and so converges to a unique fixed point &lt;span  class=&#34;math&#34;&gt;\(Q^*\)&lt;/span&gt;, where &lt;span  class=&#34;math&#34;&gt;\(Q^*(s, a)\)&lt;/span&gt; gives the expected value of the MDP starting from state $s$, taking action $a$, and thereafter following the optimal policy &lt;span  class=&#34;math&#34;&gt;\(\pi^*(s) = \arg \max_{a \in A} Q^*(s,a)\)&lt;/span&gt;.&lt;/p&gt;
-
-&lt;p&gt;A regret-minimisation problem considers a single decision-maker playing a game against an adversary. Consider a set of $n$ actions $a_1, \dots, a_n$ and the following game setup:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;At time $t=0,1,\dots,T$:
-
-&lt;ul&gt;
-&lt;li&gt;A decision maker picks a mixed strategy $\pi_t$ (probability distribution over its actions $A$).&lt;/li&gt;
-&lt;li&gt;An adversary picks a (bounded) cost vector, $c_t(a)$, for each action.&lt;/li&gt;
-&lt;li&gt;An action $a_t$ is chosen according to the distribution $\pi_t$ and the decision maker incurs a cost &lt;span  class=&#34;math&#34;&gt;\(c_t(a_t)\)&lt;/span&gt;. The decision maker learns the entire cost vector $c_t$ not just the realised cost.&lt;br&gt;
-&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We are not able to compare the cost of online decision-making to the cost of the best action sequence in hindsight - the benchmark of &lt;span  class=&#34;math&#34;&gt;\(\sum^T_{t=0} \min_{a \in A}c_t(a)\)&lt;/span&gt; is not achievable. Rather than comparing the expected cost of an algorithm to that of the best action &lt;em&gt;sequence&lt;/em&gt; in hindsight, we compare it to the cost incurred by the best &lt;em&gt;fixed action&lt;/em&gt; in hindsight. So, the benchmark becomes &lt;span  class=&#34;math&#34;&gt;\(\min_{a\in A} \sum^T_{t=0} c_t(a)\)&lt;/span&gt;.  The time-averaged (external) regret of the action sequence $a_1, \dots, a_T$ with respect to the action $a$ is&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[ \frac{1}{T+1} \left[ \sum_{t=0}^T c_t(a_t) - \sum_{i=0}^T c_t(a)  \right] \]&lt;/span&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;noregret-learning&#34;&gt;No-Regret Learning&lt;/h2&gt;
-
-&lt;p&gt;An algorithm is &lt;strong&gt;no-regret&lt;/strong&gt; if there is a sequence of constants $\rho_t$ such that regardless of the adversary, the regret at time $t$ is at most &lt;span  class=&#34;math&#34;&gt;\(\rho_t\)&lt;/span&gt; and &lt;span  class=&#34;math&#34;&gt;\(\lim_{t \rightarrow \infty} \rho_t = 0\)&lt;/span&gt;. A common bound is $O(1/\sqrt{k})$. An algorithm is &lt;strong&gt;no-absolute-regret&lt;/strong&gt; if the regret is bounded by $||\rho_t||$, whereas it is &lt;strong&gt;non-negative-regret&lt;/strong&gt; if regret is bounded by $(0,\rho_t)$.&lt;/p&gt;
-
-&lt;h3 id=&#34;local-noregret-learning-lonr&#34;&gt;Local No-Regret Learning (LONR)&lt;/h3&gt;
-
-&lt;p&gt;This is the algorithm proposed by Kash et al (2019). It is summarised as follows:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Initialise matrix $Q_0$&lt;/li&gt;
-&lt;li&gt;Initialise $|S|$ copies of the no-absolute-regret algorithm (one for each state) and find the optimal policy $\pi_0$ for current state $s$.&lt;/li&gt;
-&lt;li&gt;Iteratively reveal costs to the copy of the algorithm for $s$ as &lt;span  class=&#34;math&#34;&gt;\(c_t(a) = Q_t(s,a)\)&lt;/span&gt;, and update the policy $\pi_{t+1}$ according to the algorithm and the update rule&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[Q_{t+1} (s,a) = r(s,a) + \gamma \mathbb{E}_{P, \pi_k} \left[ Q_t(s&#39;,a&#39;) \right]\]&lt;/span&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;comments&#34;&gt;Comments&lt;/h1&gt;
-
-&lt;p&gt;In the way it is currently presented, the above method is not suitable for a reinforcement learning environment since it assumes knowledge of transition probabilities, which an agent does not normally have (at least in model-free settings). In order to implement this in an MDP or Markov game setting with reinforcement learning, we have to make some adjustments to the specification. In order to implement, we need to specify a no-regret algorithm such as multiplicative weights or regret matching.&lt;/p&gt;
-
-&lt;p&gt;The combination of Q-learning and no-regret has been proven only for a single agent in an MDP setting; the method has been shown experimentally to work in Markov games, but convergence is yet to be verified.&lt;/p&gt;
-
-&lt;h1 id=&#34;references&#34;&gt;References&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Roughgarden T., CS364A: Algorithmic Game Theory Lecture #17: No-Regret Dynamics, &lt;a href=&#34;http://timroughgarden.org/f13/l/l17.pdf&#34;&gt;url&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Kash, I.A., Sullins, M. and Hofmann, K., 2019. Combining No-regret and Q-learning. &lt;em&gt;arXiv preprint arXiv:1910.03094.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;Zinkevich, M., Johanson, M., Bowling, M. and Piccione, C., 2008. Regret minimization in games with incomplete information. In &lt;em&gt;Advances in Neural Information Processing Systems&lt;/em&gt; (pp. 1729-1736).&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Note on partial observability in multi-agent systems: Dec-POMDP</title>
-      <link>https://martagrz.github.io/post/dec-pomdp/</link>
-      <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://martagrz.github.io/post/dec-pomdp/</guid>
-      <description>&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
-
-&lt;p&gt;When a single-agent is required to learn in a partially observable environment, we rely on a global belief state, meaning given the partially observable state $s$ we can infer the global environment based on a model. In a multi-agent setting, however, this is no longer a sufficient statistic since each agent has a local observation of their own state and no information about the states of the other agents. In general, this setting can be modelled by a decentralised POMDP (Dec-POMDP) (Oliehoek and Amato, 2016), which shares almost all elements such as the reward function and the transition model, as the multi-agent MDP (MMDP), except that each agent now only has its local observations of the system state $s$. With no accessibility to other agents’ observations, an individual agent cannot maintain a global belief state, the sufficient statistic for decision making in single-agent POMDPs.&lt;/p&gt;
-
-&lt;p&gt;Most algorithms applied in this setting assume co-operation between the agents, as opposed to competitive, zero-sum or mixed, general-sum games, and are based on a centralised-learning-decentralised-execution method. Centralisation means a central controller observes all the states, actions and rewards and makes action choices for each agent, whereas decentralisation means that each agent is autonomous and observes only their own states and rewards. This method first reformulates the problem as a centralised one using a simulator that generates the observation data of all agents. The policies are then optimised using this data and distributed to all agents for execution.&lt;/p&gt;
-
-&lt;h3 id=&#34;definition&#34;&gt;Definition&lt;/h3&gt;
-
-&lt;p&gt;A decentralised partially observable MDP (Dec-POMDP) is a tuple &lt;span  class=&#34;math&#34;&gt;\(\langle I, S, \{ A_i \}, P, \{ \Omega_i \}, O, R, h \rangle\)&lt;/span&gt; where&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;$I$ is a finite set of agents indexed $1,\dots, n$&lt;/li&gt;
-&lt;li&gt;$S$ is a finite set of states, with distinguished initial state $s_0$&lt;/li&gt;
-&lt;li&gt;&lt;span  class=&#34;math&#34;&gt;\(A_i\)&lt;/span&gt; is a finite set of actions available to agent $i$, and $\overrightarrow{A} = \otimes_{i \in I} A_i$ is the set of joint actions&lt;/li&gt;
-&lt;li&gt;$P : S \times \overrightarrow{A}  \rightarrow \Delta(S)$ is a Markovian transition function, where $P(s&#39; | s, \overrightarrow{a})$ denotes the probability that after taking joint action $\overrightarrow{a} $ in state $s$ a transition to state $s&#39;$ occurs&lt;/li&gt;
-&lt;li&gt;&lt;span  class=&#34;math&#34;&gt;\(\Omega_i\)&lt;/span&gt; is a finite set of observations available to agent $i$, and $\overrightarrow{\Omega}  = \otimes_{i \in I} \Omega_i$ is the set of joint observations&lt;/li&gt;
-&lt;li&gt;$O : \overrightarrow{A}  \times S \rightarrow \Delta(\overrightarrow{\Omega})$ is an observation function. $O(\overrightarrow{o}|\overrightarrow{a} , s&#39;)$ denotes the probability of observing joint observation $\overrightarrow{o}$ given that joint action $\overrightarrow{a}$ was taken and led to state $s&#39;$&lt;/li&gt;
-&lt;li&gt;$R : \overrightarrow{A} \times S \rightarrow \mathbb{R}$ is a reward function. $R(\overrightarrow{a}, s&#39;)$ denotes the reward obtained after joint action $\overrightarrow{a}$ was taken and a state transition to $s&#39;$ occurred&lt;/li&gt;
-&lt;li&gt;If the Dec-POMDP has a finite horizon, that horizon is represented by a positive integer $h$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;comments&#34;&gt;Comments&lt;/h3&gt;
-
-&lt;p&gt;Dec-POMDPs have been shown to be NEXP-hard (Bernstein et al, 2002) and require super-exponential time to solve in the worst case. There have been multiple methods improving on this, including Monte Carlo sampling with policy iteration and the expectation-maximisation algorithm in Wu et al. (2010) and Wu et al. (2013).&lt;/p&gt;
-
-&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Spaan, M., Amato, C., Zilberstein, S., 2011, Decision Making in Multiagent Settings: Team Decision Making, &lt;em&gt;AAMAS11 Tutorial&lt;/em&gt;, &lt;a href=&#34;http://users.isr.ist.utl.pt/~mtjspaan/tutorialDMMS/tutorialAAMAS11.pdf&#34;&gt;url&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Oliehoek, F.A. and Amato, C., 2016. A concise introduction to decentralized POMDPs (Vol. 1). &lt;em&gt;Springer International Publishing&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;Bernstein, D.S., Givan, R., Immerman, N. and Zilberstein, S., 2002. The complexity of decentralized control of Markov decision processes. &lt;em&gt;Mathematics of operations research&lt;/em&gt;, 27(4), pp.819-840.&lt;/li&gt;
-&lt;li&gt;Zhang, K., Yang, Z. and Başar, T., 2019. Multi-Agent Reinforcement Learning: A Selective Overview of Theories and Algorithms. &lt;em&gt;arXiv preprint arXiv:1911.10635.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;Wu, F., Zilberstein, S. and Chen, X., 2010, May. Point-based policy generation for decentralized POMDPs. In &lt;em&gt;AAMAS&lt;/em&gt; (pp. 1307-1314).&lt;/li&gt;
-&lt;li&gt;Wu, F., Zilberstein, S. and Jennings, N.R., 2013, June. Monte-Carlo expectation maximization for decentralized POMDPs. In &lt;em&gt;Twenty-Third International Joint Conference on Artificial Intelligence&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;Omidshafiei, S., Pazis, J., Amato, C., How, J.P. and Vian, J., 2017, August. Deep decentralized multi-task multi-agent reinforcement learning under partial observability. In &lt;em&gt;Proceedings of the 34th International Conference on Machine Learning-Volume 70&lt;/em&gt; (pp. 2681-2690).&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Implementing Nash Q-Learning</title>
       <link>https://martagrz.github.io/post/nash-q/</link>
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
@@ -392,15 +272,6 @@ state &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; next_state&lt;/co
 &lt;li&gt;Greenwald, A., Hall, K. and Serrano, R., 2003, August. Correlated Q-learning. In &lt;em&gt;ICML&lt;/em&gt; (Vol. 20, No. 1, p. 242).&lt;/li&gt;
 &lt;li&gt;Maillard, O.A., Munos, R., Lazaric, A. and Ghavamzadeh, M., 2010, October. Finite-sample analysis of Bellman residual minimization. In &lt;em&gt;Proceedings of 2nd Asian Conference on Machine Learning&lt;/em&gt; (pp. 299-314).&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hierarchical Reinforcement Learning</title>
-      <link>https://martagrz.github.io/project/hierarchical-rl/</link>
-      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://martagrz.github.io/project/hierarchical-rl/</guid>
-      <description>&lt;p&gt;Recommender systems often use multiple layers to present the user with items they might like. In Spotify, the carousel of recommended playlists are under a title based on the user&amp;rsquo;s previous behaviour (for example &amp;ldquo;Because you listened to &amp;hellip;&amp;quot;) and each carousel has multiple items. This lends itself to a hierarchical reinforcement learning algorithm for recommenders; first, the title is chosen, then the relevant playlists are chosen based on the title.&lt;/p&gt;
 </description>
     </item>
     
@@ -599,24 +470,6 @@ plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()&lt;/code&gt;&l
 &lt;p&gt;&lt;figure&gt;&lt;img src=&#34;https://martagrz.github.io/img/posts/gps/gaussian-processes_38_0.png&#34; alt=&#34;png&#34;&gt;&lt;/figure&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;figure&gt;&lt;img src=&#34;https://martagrz.github.io/img/posts/gps/gaussian-processes_38_1.png&#34; alt=&#34;png&#34;&gt;&lt;/figure&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Multi-Agent Q-Learning</title>
-      <link>https://martagrz.github.io/project/simultaneous-q/</link>
-      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://martagrz.github.io/project/simultaneous-q/</guid>
-      <description>&lt;p&gt;Multiple agents learning at the same time using a value-based approach leads to a non-stationary environment since it is constantly changing based on the opponent&amp;rsquo;s actions. I am investigating this system, including the combination of game theoretic methods and algorithms to maintain structure in this seemingly chaotic system.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Reinforcement Learning in Dynamic Pricing</title>
-      <link>https://martagrz.github.io/project/rl-dp/</link>
-      <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://martagrz.github.io/project/rl-dp/</guid>
-      <description>&lt;p&gt;Dynamic pricing relates to the set of problems where firms are required to set prices in response to state variables to maximise their revenue. Traditional approaches assume a functional form of the demand function and optimise for its parameters to find the optimal pricing solution. Reinforcement learning is a powerful tool, suitable for learning pricing policies under uncertainty of the reward function. It is a non-parametric method where a functional form of the function does not have to be assumed and the relationship is learned by trial and error. Under the conditions of uncertain demand, it is appropriate to apply reinforcement learning methods to dynamic pricing problems.&lt;/p&gt;
 </description>
     </item>
     

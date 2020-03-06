@@ -5,12 +5,36 @@
     <link>https://martagrz.github.io/tags/</link>
       <atom:link href="https://martagrz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 06 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://martagrz.github.io/img/icon-192.png</url>
       <title>Tags</title>
       <link>https://martagrz.github.io/tags/</link>
     </image>
+    
+    <item>
+      <title>Implementation</title>
+      <link>https://martagrz.github.io/tags/implementation/</link>
+      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://martagrz.github.io/tags/implementation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Neural Processes</title>
+      <link>https://martagrz.github.io/tags/neural-processes/</link>
+      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://martagrz.github.io/tags/neural-processes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Variational Inference</title>
+      <link>https://martagrz.github.io/tags/variational-inference/</link>
+      <pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://martagrz.github.io/tags/variational-inference/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Multi-Agent</title>
@@ -53,10 +77,10 @@
     </item>
     
     <item>
-      <title>Equilibirum</title>
-      <link>https://martagrz.github.io/tags/equilibirum/</link>
+      <title>Equilibrium</title>
+      <link>https://martagrz.github.io/tags/equilibrium/</link>
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://martagrz.github.io/tags/equilibirum/</guid>
+      <guid>https://martagrz.github.io/tags/equilibrium/</guid>
       <description></description>
     </item>
     

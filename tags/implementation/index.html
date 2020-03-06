@@ -31,7 +31,7 @@
   <meta name="description" content="PhD student">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://martagrz.github.io/post/">
+  <link rel="alternate" hreflang="en-us" href="https://martagrz.github.io/tags/implementation/">
 
   
 
@@ -95,14 +95,14 @@
 
 
   
-  <link rel="alternate" href="/post/index.xml" type="application/rss+xml" title="Marta Grześkiewicz">
+  <link rel="alternate" href="/tags/implementation/index.xml" type="application/rss+xml" title="Marta Grześkiewicz">
   
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://martagrz.github.io/post/">
+  <link rel="canonical" href="https://martagrz.github.io/tags/implementation/">
 
   
   
@@ -115,8 +115,8 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Marta Grześkiewicz">
-  <meta property="og:url" content="https://martagrz.github.io/post/">
-  <meta property="og:title" content="Posts | Marta Grześkiewicz">
+  <meta property="og:url" content="https://martagrz.github.io/tags/implementation/">
+  <meta property="og:title" content="Implementation | Marta Grześkiewicz">
   <meta property="og:description" content="PhD student"><meta property="og:image" content="https://martagrz.github.io/img/icon-192.png">
   <meta property="twitter:image" content="https://martagrz.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
   
@@ -137,7 +137,7 @@
 
 
 
-  <title>Posts | Marta Grześkiewicz</title>
+  <title>Implementation | Marta Grześkiewicz</title>
 
 </head>
 
@@ -364,7 +364,7 @@
     
   
 <div class="universal-wrapper pt-3">
-  <h1>Posts</h1>
+  <h1>Implementation</h1>
 
   
 
@@ -374,159 +374,41 @@
 
 
 <div class="universal-wrapper">
-
   
 
   
   
-    
+  <div>
+    <h2><a href="/post/neural_processes/">Implementation of Neural Processes</a></h2>
+    <div class="article-style">
       
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="view-list-item">
-  <i class="far fa-newspaper pub-icon" aria-hidden="true"></i>
-  <a href="/post/neural_processes/" >Implementation of Neural Processes</a>
-
-  
-
-  
-
-  
-
-</div>
-
-    
-  
-    
+      Introduction Neural Processes (NPs) aim to combine the computational efficiency and evaluation ability of neural networks (NNs) and the distributions over functions given by flexible and data-efficient but computationally-inefficient GPs. They do this by using an encoder-decoder structured network, where the encoder includes a latent distributional representation of the inputs. This gives the network a value over uncertainty and a distribution over possible functions. Using an aggregator in between the encoder and decoder, the computational efficiency is $O(n)$, where $n$ is the total number of data points.
       
-
-
-
-
-
-
-
-
-
-
+    </div>
+  </div>
   
-
-
-<div class="view-list-item">
-  <i class="far fa-newspaper pub-icon" aria-hidden="true"></i>
-  <a href="/post/no-regret-q-learning/" >On Combining Q-Learning and No-Regret Learning</a>
-
-  
-
-  
-
-  
-
-</div>
-
-    
-  
-    
+  <div>
+    <h2><a href="/post/nash-q/">Implementing Nash Q-Learning</a></h2>
+    <div class="article-style">
       
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="view-list-item">
-  <i class="far fa-newspaper pub-icon" aria-hidden="true"></i>
-  <a href="/post/dec-pomdp/" >Note on partial observability in multi-agent systems: Dec-POMDP</a>
-
-  
-
-  
-
-  
-
-</div>
-
-    
-  
-    
+      Introduction Implementing single-agent reinforcement learning methods in multi-agent settings where both agents update their values simultaneously is a generally naive method which does not result in convergent policies. Hu and Wellman (2003) attribute this to a neglect of two issues specific to the multi-agent context. Firstly, the environment is no longer stationary since the agents are simultaneously adapting; the result of an agent's choice is going to change based on the choice of the other agents.
       
-
-
-
-
-
-
-
-
-
-
+    </div>
+  </div>
   
-
-
-<div class="view-list-item">
-  <i class="far fa-newspaper pub-icon" aria-hidden="true"></i>
-  <a href="/post/nash-q/" >Implementing Nash Q-Learning</a>
-
-  
-
-  
-
-  
-
-</div>
-
-    
-  
-    
+  <div>
+    <h2><a href="/post/gaussian-processes/">Introduction to Multi-task Gaussian Processes</a></h2>
+    <div class="article-style">
       
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="view-list-item">
-  <i class="far fa-newspaper pub-icon" aria-hidden="true"></i>
-  <a href="/post/gaussian-processes/" >Introduction to Multi-task Gaussian Processes</a>
-
+      A significant part of scientific literature focuses on fitting and predicting from an unknown function. When the function is complex, does not have a closed-form solution or is 'blackbox', a strategy is required to fit such a function with limited prior information. Bayesian optimisation is a class of machine learning-based optimisation methods focused on such a problem, which is characterised by the objective
+\[\max_x f(x)\]
+In these cases, although the true function $f$ is unknown, we can use existing prior knowledge about its properties, such as smoothness, which makes some objective functions more applicable than others in the specific problem.
+      
+    </div>
+  </div>
   
 
   
-
-  
-
-</div>
-
-    
-  
-
-  
-
 
 </div>
 
