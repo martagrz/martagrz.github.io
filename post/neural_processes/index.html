@@ -568,7 +568,7 @@ observation noise <span  class="math">\(Y_i \sim \mathcal{N} (F(x_i), \sigma^2)\
 <p><span  class="math">\[ \mathcal{L} = - \log p(y_t|\hat{y}_T) + \text{KL}(z_T || z_C)\]</span></p>
 
 <p>where in general terms,
-<span  class="math">\(\text{KL}(P\parallel Q)=\sum _{x\in {\mathcal {X}}}P(x)\log \left({\frac {P(x)}{Q(x)}}\right).\)</span> This loss therefore is the ELBO, where $P(x)$ is approximated by another function.</p>
+<span  class="math">\(\text{KL}(P\parallel Q)=\int _{-\infty }^{\infty } P(x)\log \left({\frac {P(x)}{Q(x)}}\right) \text{d}x\)</span>. See the <a href="https://martagrz.github.io/post/variational-inference/">post on variational inference</a> to see how this was derived.</p>
 
 <p>The first term in the loss function is the likelihood of the true target output given the predicted target output. We want to maximise this likelihood, meaning that our network obtains close to true values. This is regularised by the KL divergence, since we want the distribution of the target and context variables to be the same since they come from the same dataset.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">loss</span>(self,y_target,output):
@@ -814,6 +814,13 @@ observation noise <span  class="math">\(Y_i \sim \mathcal{N} (F(x_i), \sigma^2)\
 <div class="article-widget">
   
 <div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/post/variational-inference/" rel="next">Introduction to Variational Inference</a>
+  </div>
   
   
   

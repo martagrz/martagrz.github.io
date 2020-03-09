@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://martagrz.github.io/post/variational-inference/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/post/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/tags/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://martagrz.github.io/tags/variational-inference/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://martagrz.github.io/tags/implementation/</loc>
     <lastmod>2020-03-06T00:00:00+00:00</lastmod>
   </url>
@@ -13,27 +38,7 @@
   </url>
   
   <url>
-    <loc>https://martagrz.github.io/</loc>
-    <lastmod>2020-03-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://martagrz.github.io/tags/neural-processes/</loc>
-    <lastmod>2020-03-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://martagrz.github.io/post/</loc>
-    <lastmod>2020-03-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://martagrz.github.io/tags/</loc>
-    <lastmod>2020-03-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://martagrz.github.io/tags/variational-inference/</loc>
     <lastmod>2020-03-06T00:00:00+00:00</lastmod>
   </url>
   

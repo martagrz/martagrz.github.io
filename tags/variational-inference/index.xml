@@ -5,12 +5,92 @@
     <link>https://martagrz.github.io/tags/variational-inference/</link>
       <atom:link href="https://martagrz.github.io/tags/variational-inference/index.xml" rel="self" type="application/rss+xml" />
     <description>Variational Inference</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 06 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 09 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://martagrz.github.io/img/icon-192.png</url>
       <title>Variational Inference</title>
       <link>https://martagrz.github.io/tags/variational-inference/</link>
     </image>
+    
+    <item>
+      <title>Introduction to Variational Inference</title>
+      <link>https://martagrz.github.io/post/variational-inference/</link>
+      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://martagrz.github.io/post/variational-inference/</guid>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;Monte Carlo Markov Chain (MCMC) methods are established as ways to approximate difficult to calculate or intractable probability densities. Variational inference (VI) is a method from machine learning that also approximates probability densities but through optimisation rather than sampling from a Markov Chain. It two main steps: first, a family of densities is specified which is believed to represent the closest approximation to the true density and secondly, a member of that family is chosen which is closest to the target distribution. &lt;em&gt;Closeness&lt;/em&gt; uses metrics of difference between probability distributions and KL-divergence is the most commonly used.&lt;/p&gt;
+
+&lt;p&gt;The goal of these methods is the same and it is to approximate a conditional density of latent variables given observed variables. Specifically, given a joint distribution $p(z, x)$ of observed $x$ and latent $z$, we seek to approximate $p(z|x)$. The conditional distribution is useful as it can be used to, for example, compute point or interval estimates of latent variables or form predictive densities of new data.&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[p(z|x) = \frac{p(z, x)}{p(x)} = \frac{p(z, x)}{\int p(z, x) \text{d}z}\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;We can use the joint distribution to calculate the sought-after conditional, and the above equation shows how that can be done. It is unlikely that $p(x)$, the density of the observed data, is known and it is replaced by marginalising out the latent variable from the joint distribution. However, this integral, also known as the &lt;strong&gt;evidence&lt;/strong&gt; is often intractable or difficult to calculate. Therefore, MCMC or VI methods are used to approximate this conditional distribution.&lt;/p&gt;
+
+&lt;h1 id=&#34;method&#34;&gt;Method&lt;/h1&gt;
+
+&lt;p&gt;A family $Q$ of densities over the latent variables is specified, where $q(z) \in Q$ is considered as the approximation to the exact distribution&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[q^*(z) = \arg \min_{q(z) \in Q} \text{KL} (q(z) \parallel p(z|x))\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;where, &lt;span  class=&#34;math&#34;&gt;\(\text{KL}(q(z)\parallel p(z|x))=q(z)\log \left({\frac {q(z)}{p(z|x)}}\right)\,\text{d}z\)&lt;/span&gt; is the Kullback-Leiber divergence. It is important to note that this measure is &lt;strong&gt;asymmetric&lt;/strong&gt;, meaning &lt;span  class=&#34;math&#34;&gt;\(\text{KL} (q(z) \parallel p(z|x)) \neq \text{KL} (p(z|x) \parallel q(z))\)&lt;/span&gt;. It is non-negative measure, and a measure of $0$ indicated that the two distributions are identical.&lt;/p&gt;
+
+&lt;p&gt;The complexity of the family determines the complexity of the computation of this optimisation. However, the above optimisation is not computable due to the reliance of $\log p(x)$.&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[ \text{KL}(q(z)\parallel p(z|x)) = \mathbb{E} \left[ \log q(z) \right] - \mathbb{E} \left[ \log p(z|x) \right] \]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[ \text{KL}(q(z)\parallel p(z|x)) = \mathbb{E} \left[ \log q(z) \right] - \mathbb{E} \left[ \log p(z, x) \right] + \log p(x) \]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;since the expectation is taken with respect to $q(z)$. We cannot compute this, so we optimisise an alternative that is equivalent to KL up to a constant&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[\text{ELBO} (q) = \mathbb{E} \left[ \log p(z,x) \right] - \mathbb{E} \left[ \log q(z) \right] \]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Therefore, &lt;span  class=&#34;math&#34;&gt;\(\text{ELBO}(q) = - \text{KL} + \log p(x)\)&lt;/span&gt; and maximising the ELBO is equivalent to minimising the KL divergence between the two distributions. The ELBO can be described as the sum of expected log likelihood of data and the KL divergence between the prior $p(z)$ and $q(z)$. The first term encourages densities that place their mass on configurations of latent variables that explain the observed data, while the second term encourages densities close to the prior. As found often in Bayesian statistics, it is a balance between the likelihood and the prior.&lt;/p&gt;
+
+&lt;p&gt;The ELBO stands for the &lt;strong&gt;evidence lower-bound&lt;/strong&gt; and it is exactly that:&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[ \log p(x) \geq \text{ELBO} (q) \text{ for any } q(z)\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;since&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[ \log p(x) = \text{KL} (q(z) \parallel p(z|x)) + \text{ELBO}(q) \]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;and &lt;span  class=&#34;math&#34;&gt;\(\text{KL}(\cdot) \geq 0\)&lt;/span&gt; by construct of the measure, or it can be derived by Jensen&#39;s inequality, which we omit here. This bound is a good approximation of marginal likelihood, and can sometimes provide a basis for model selection, although this is not supported in theory.&lt;/p&gt;
+
+&lt;h2 id=&#34;distributional-family-q&#34;&gt;Distributional family $Q$&lt;/h2&gt;
+
+&lt;p&gt;An example of $Q$ that is often chosen is the mean-field, where latent variables are mutually independent and each governed by a distinct factor in the variational density. It connects the fitted variational density to data and model.&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[ q(z) = \Pi^m_{j=1} q_j(z_j) \]&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;example&#34;&gt;Example&lt;/h3&gt;
+
+&lt;p&gt;This example is taken from Blei et al (2017). It compares the exact 2-dimensional Gaussian posterior and the variational approximation.&lt;/p&gt;
+
+&lt;p&gt;&lt;figure&gt;&lt;img src=&#34;https://martagrz.github.io/img/posts/vi/mean-field-example.png&#34; alt=&#34;png&#34;&gt;&lt;/figure&gt;&lt;/p&gt;
+
+&lt;p&gt;The variational approximation has the same mean as the original density but the covariance, by construction, is decoupled. This is a direct result of the mean-field approximation, as we have assumed each $q_j(z_j)$ to be independent. The marginal variances of approximation under-represent that of the target density.&lt;/p&gt;
+
+&lt;p&gt;Moreover, the KL divergence is not symmetric, meaning that it penalises placing mass in $q(\cdot)$ on areas where $p(\cdot)$ has little mass but penalises less the reverse. In the above example, $q(\cdot)$ would have to expand into territory where $p(\cdot)$ has little mass.&lt;/p&gt;
+
+&lt;h2 id=&#34;optimisation-method&#34;&gt;Optimisation method&lt;/h2&gt;
+
+&lt;p&gt;A common method of optimisation under the mean-field assumption is the &lt;strong&gt;coordinate ascent mean-field variational inference&lt;/strong&gt; (CAVI) (Bishop, 2006) which iteratively optimises each factor of the mean-field variational density, holding the others fixed. It obtains the ELBO local optimum.&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[ q^*_{j} (z_j) \propto \exp \{ \mathbb{E}_{-j} [  \log p(z_j | z_{-j}, x)  ]  \}  \equiv \exp \{ \mathbb{E}_{-j} [  \log p(z_j, z_{-j}, x)  ]  \} \]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;The equivalence holds under the mean-field assumption since the latent variables are assumed to be independent. The algorithm calculates the above for each latent variable &lt;span  class=&#34;math&#34;&gt;\(j \in \{ 1,\dots, m \}\)&lt;/span&gt; and then computes &lt;span  class=&#34;math&#34;&gt;\(\text{ELBO} (q) = \mathbb{E} \left[ \log p(z,x) \right] - \mathbb{E} \left[ \log q(z) \right] \)&lt;/span&gt; until ELBO has converged (differences in each iteration are negligible).&lt;/p&gt;
+
+&lt;p&gt;This algorithm is closely related to Gibbs sampling, which maintains a realisation of latent variables and iteratively samples from each variable&#39;s complete conditional distribution.&lt;/p&gt;
+
+&lt;h1 id=&#34;references&#34;&gt;References&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Bishop, C.M., 2006. Pattern recognition and machine learning. springer.&lt;/li&gt;
+&lt;li&gt;Blei, D.M., Kucukelbir, A. and McAuliffe, J.D., 2017. Variational inference: A review for statisticians. Journal of the American statistical Association, 112(518), pp.859-877.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Implementation of Neural Processes</title>
@@ -109,7 +189,7 @@ observation noise &lt;span  class=&#34;math&#34;&gt;\(Y_i \sim \mathcal{N} (F(x_
 &lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[ \mathcal{L} = - \log p(y_t|\hat{y}_T) + \text{KL}(z_T || z_C)\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;where in general terms,
-&lt;span  class=&#34;math&#34;&gt;\(\text{KL}(P\parallel Q)=\sum _{x\in {\mathcal {X}}}P(x)\log \left({\frac {P(x)}{Q(x)}}\right).\)&lt;/span&gt; This loss therefore is the ELBO, where $P(x)$ is approximated by another function.&lt;/p&gt;
+&lt;span  class=&#34;math&#34;&gt;\(\text{KL}(P\parallel Q)=\int _{-\infty }^{\infty } P(x)\log \left({\frac {P(x)}{Q(x)}}\right) \text{d}x\)&lt;/span&gt;. See the &lt;a href=&#34;https://martagrz.github.io/post/variational-inference/&#34;&gt;post on variational inference&lt;/a&gt; to see how this was derived.&lt;/p&gt;
 
 &lt;p&gt;The first term in the loss function is the likelihood of the true target output given the predicted target output. We want to maximise this likelihood, meaning that our network obtains close to true values. This is regularised by the KL divergence, since we want the distribution of the target and context variables to be the same since they come from the same dataset.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;loss&lt;/span&gt;(self,y_target,output):
