@@ -1,3 +1,3 @@
 User-agent: *
 
-Sitemap: https://martagrz.github.io/sitemap.xml
+Sitemap: https://example.com/sitemap.xml
