@@ -25,14 +25,14 @@ organizations:
     url: ucl.ac.uk
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests lie at the intersection of Economics and Machine Learning
+bio: My interests lie at the intersection of economics and machine learning. My work aims to understand and model the underlying mechanisms of choice and decision-making behaviour, accounting for dynamic settings, across a range of environments. 
 
 # Interests to show in About widget
 interests:
+  - Microeconomics
   - Computational Economics
-  - Dynamic Pricing 
-  - Recommender Systems
-  - (Inverse) Reinforcement Learning
+  - Dynamic Programming / Reinforcement Learning
+  - Game Theory
   - Machine Learning
 
 # Education to show in About widget
@@ -47,46 +47,6 @@ education:
     - course: BA in Economics
       institution: University of Cambridge
       year: 2014 - 2017
-
-# Skills
-# For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
-# skills:
-#   - name: Technical
-#     items:
-#       - name: Python
-#         description: ''
-#         percent: 80
-#         icon: python
-#         icon_pack: fab
-#       - name: Data Science
-#         description: ''
-#         percent: 100
-#         icon: chart-line
-#         icon_pack: fas
-#       - name: SQL
-#         description: ''
-#         percent: 40
-#         icon: database
-#         icon_pack: fas
-#   - name: Hobbies
-#     color: '#eeac02'
-#     color_border: '#f0bf23'
-#     items:
-#       - name: Hiking
-#         description: ''
-#         percent: 60
-#         icon: person-hiking
-#         icon_pack: fas
-#       - name: Cats
-#         description: ''
-#         percent: 100
-#         icon: cat
-#         icon_pack: fas
-#       - name: Photography
-#         description: ''
-#         percent: 80
-#         icon: camera-retro
-#         icon_pack: fas
 
 # Social/Academic Networking
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
@@ -120,6 +80,14 @@ social:
 
 # Highlight the author in author lists? (true/false)
 highlight_name: true
+
+# In September 2024, I will be joining St John's College, University of Cambridge, as a College Associate Lecturer and Fellow in Economics.
 ---
 
-I am a Founder of a tech start-up which is currently in stealth. My research interests lie at the intersection of Economics and Machine Learning. 
+My interests lie at the intersection of economics and machine learning. My work aims to understand and model the underlying mechanisms of choice and decision-making behaviour, accounting for dynamic settings, across a range of environments. To this end, I combine and develop tools and techniques in a variety of areas such as microeconomic theory, game theory, algorithms, machine learning and data science.
+
+I am a Founder of a company that seeks to develop and apply algorithms for understanding and modelling consumer behaviour in industry settings. We are currently looking for design partners in the supermarket and airline space to develop our proof of concept. 
+
+ 
+
+

@@ -8,3 +8,13 @@ jsconfig.json
 node_modules/
 go.sum
 .hugo_build.lock
+/content/publication/conference-paper/
+/content/publication/journal-article/
+/content/publication/preprint/
+/content/post/blog-with-jupyter/
+/content/post/getting-started/
+/content/post/writing-technical-content/
+/content/post/_index.md
+/content/event/example/
+/content/event/_index.md
+/content/slides/example/
