@@ -21,8 +21,8 @@ role: Founder
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: UCL
-    url: ucl.ac.uk
+  - name: 
+    url: 
 
 # Short bio (displayed in user profile at end of posts)
 bio: My interests lie at the intersection of economics and machine learning. My work aims to understand and model the underlying mechanisms of choice and decision-making behaviour, accounting for dynamic settings, across a range of environments. 
