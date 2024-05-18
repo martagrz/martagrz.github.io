@@ -6,7 +6,7 @@ type: landing
 
 sections:
   - block: hero
-    demo: false # Only display this section in the Hugo Blox Builder demo site
+    demo: true # Only display this section in the Hugo Blox Builder demo site
     content:
       title: Hugo Academic Theme
       image:
@@ -224,11 +224,11 @@ sections:
 #    design:
 #      columns: '2'
 #      view: compact
-#  - block: tag_cloud
-#    content:
-#      title: Popular Topics
-#    design:
-#      columns: '2'
+  - block: tag_cloud
+    content:
+      title: Popular Topics
+    design:
+      columns: '2'
 #  - block: contact
 #    id: contact
 #    content:
