@@ -53,9 +53,9 @@ education:
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "/#contact" for contact widget.
 social:
-#  - icon: envelope
-#    icon_pack: fas
-#    link: 'mailto:marta.j.grzeskiewicz@gmail.com'
+  - icon: envelope
+    icon_pack: fas
+    link: 'mailto:marta.j.grzeskiewicz@gmail.com'
   # - icon: twitter
     # icon_pack: fab
     # link: https://twitter.com/GeorgeCushen
@@ -65,9 +65,9 @@ social:
   # - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
     # icon_pack: fas
     # link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
-#  - icon: github
-#    icon_pack: fab
-#    link: https://github.com/martagrz
+  - icon: github
+    icon_pack: fab
+    link: https://github.com/martagrz
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/marta-grzeskiewicz-486728232/
