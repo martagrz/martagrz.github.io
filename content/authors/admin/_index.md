@@ -21,7 +21,7 @@ role: College Associate Lecturer & Fellow
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: St John's College 
+  - name: St John's College, University of Cambridge
     url: https://www.joh.cam.ac.uk/
 
 # Short bio (displayed in user profile at end of posts)
