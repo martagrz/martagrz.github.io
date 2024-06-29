@@ -17,12 +17,12 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: Founder
+role: College Associate Lecturer & Fellow
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: 
-    url: 
+  - name: St John's College 
+    url: https://www.joh.cam.ac.uk/
 
 # Short bio (displayed in user profile at end of posts)
 bio: My interests lie at the intersection of economics and machine learning. My work aims to understand and model the underlying mechanisms of choice and decision-making behaviour, accounting for dynamic settings, across a range of environments. 
