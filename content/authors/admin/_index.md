@@ -81,12 +81,18 @@ social:
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 
-# In September 2024, I will be joining St John's College, University of Cambridge, as a College Associate Lecturer and Fellow in Economics.
+
 ---
 
-My interests lie at the intersection of economics and machine learning. My work aims to understand and model the underlying mechanisms of choice and decision-making behaviour, accounting for dynamic settings, across a range of environments. To this end, I combine and develop tools and techniques in a variety of areas such as microeconomic theory, game theory, algorithms, machine learning and data science.
+My research interests lie at the intersection of economics and machine learning. My work aims to understand and model 
+the mechanisms underlying choice and decision-making processes, combining aspects of economic theory with modern 
+computational methods. This is applicable to a range of environments, including choice under uncertainty, 
+inter-temporal decision-making and multi-agent interactions. To this end, I combine and develop tools and 
+techniques in a variety of areas such as microeconomic theory, dynamic programming (reinforcement learning) and 
+machine learning.
 
-
+In September 2024, I will be joining St John's College, University of Cambridge, as a College Associate Lecturer and 
+Fellow in Economics.
  
 
 
