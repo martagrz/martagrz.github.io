@@ -17,12 +17,14 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: College Associate Lecturer & Fellow \\ Founder 
+role: College Associate Lecturer & Fellow 
 
 # Organizations/Affiliations to show in About widget
 organizations:
   - name: St John's College, University of Cambridge
     url: https://www.joh.cam.ac.uk/
+  
+  - name: Founder
     
   - name: Start-up currently in stealth
 
