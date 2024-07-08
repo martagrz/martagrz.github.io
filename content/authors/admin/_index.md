@@ -17,12 +17,14 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: College Associate Lecturer & Fellow
+role: College Associate Lecturer & Fellow \\ Founder 
 
 # Organizations/Affiliations to show in About widget
 organizations:
   - name: St John's College, University of Cambridge
     url: https://www.joh.cam.ac.uk/
+    
+  - name: Start-up currently in stealth
 
 # Short bio (displayed in user profile at end of posts)
 bio: My interests lie at the intersection of economics and machine learning. My work aims to understand and model the underlying mechanisms of choice and decision-making behaviour, accounting for dynamic settings, across a range of environments. 
@@ -93,6 +95,8 @@ machine learning.
 
 In September 2024, I will be joining St John's College, University of Cambridge, as a College Associate Lecturer and 
 Fellow in Economics.
+
+I am also a founder of a tech start-up focusing on developing consumer behavioural models across a range of verticals.
  
 
 
