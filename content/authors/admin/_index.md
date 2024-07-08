@@ -26,7 +26,7 @@ organizations:
   
   - name: Founder
     
-  - name: Start-up currently in stealth
+  - name: Start-up in Stealth 
 
 # Short bio (displayed in user profile at end of posts)
 bio: My interests lie at the intersection of economics and machine learning. My work aims to understand and model the underlying mechanisms of choice and decision-making behaviour, accounting for dynamic settings, across a range of environments. 
