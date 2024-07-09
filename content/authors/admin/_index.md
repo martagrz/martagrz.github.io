@@ -1,13 +1,13 @@
 ---
 # Display name
-title: Marta Grzeskiewicz
+title: Marta Grześkiewicz
 
 # Name pronunciation (optional)
 # name_pronunciation: Chien Shiung Wu
 
 # Full name (for SEO)
 first_name: Marta
-last_name: Grzeskiewicz
+last_name: Grześkiewicz
 
 # Status emoji
 status:
@@ -17,11 +17,11 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: College Associate Lecturer & Fellow 
+role: College Associate Lecturer & Fellow in Economics
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: St John's College, University of Cambridge
+  - name: St John's College, \ University of Cambridge
     url: https://www.joh.cam.ac.uk/
   
   - name: Founder
@@ -42,7 +42,7 @@ interests:
 # Education to show in About widget
 education:
   courses:
-    - course: PhD in Economics and Machine Learning
+    - course: PhD in Economics & Machine Learning
       institution: University College London
       year: 2019 - 2024
     - course: MSc in Data Science
