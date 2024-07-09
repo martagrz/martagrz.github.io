@@ -98,7 +98,7 @@ machine learning.
 In September 2024, I will be joining St John's College, University of Cambridge, as a College Associate Lecturer and 
 Fellow in Economics.
 
-I am also a founder of a tech start-up focusing on developing consumer behavioural models across a range of verticals.
+I am also a founder of a tech start-up currently in stealth.
  
 
 
