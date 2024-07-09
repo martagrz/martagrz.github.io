@@ -21,7 +21,7 @@ role: College Associate Lecturer & Fellow in Economics
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: St John's College, \ University of Cambridge
+  - name: St John's College, University of Cambridge
     url: https://www.joh.cam.ac.uk/
   
   - name: Founder
