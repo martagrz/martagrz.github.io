@@ -188,7 +188,7 @@ sections:
       filters:
         folders:
           - teaching
-        featured_only: true
+        featured_only: false
     design:
       columns: '2'
       view: compact
