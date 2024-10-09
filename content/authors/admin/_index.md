@@ -95,8 +95,7 @@ inter-temporal decision-making and multi-agent interactions. To this end, I comb
 techniques in a variety of areas such as microeconomic theory, dynamic programming (reinforcement learning) and 
 machine learning.
 
-In September 2024, I will be joining St John's College, University of Cambridge, as a College Associate Lecturer and 
-Fellow in Economics.
+I am a College Associate Lecturer and Fellow in Economics at St John's College, University of Cambridge.
 
 I am also a founder of a tech start-up currently in stealth.
  
