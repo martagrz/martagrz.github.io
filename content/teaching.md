@@ -4,7 +4,7 @@ summary:
 type: landing
 
 sections:
-  - block: resume-teaching
+  - block: teaching
     content:
       username: admin
 
