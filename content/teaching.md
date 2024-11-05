@@ -9,7 +9,7 @@ sections:
     content:  
       title: Teaching
       text: 
-      College Associate Lecturer, University of Cambridge
+        College Associate Lecturer, University of Cambridge
         
           * Undergraduate Supervisions (Economics Tripos)
               
