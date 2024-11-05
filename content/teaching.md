@@ -2,10 +2,11 @@
 title: Teaching 
 summary: 
 type: page
+  
 
 ---
 
-College Associate Lecturer, University of Cambridge
+### College Associate Lecturer, University of Cambridge
 
 * Undergraduate Supervisions (Economics Tripos)
       
@@ -18,14 +19,14 @@ College Associate Lecturer, University of Cambridge
     * Microeconomics (Part IIB Paper 1), 2024
 
   
-Supervisor
+### Research Supervisor
   
 * Department of Statistical Science, UCL
 
     * Dissertation for MSc Data Science, "Dynamic pricing of airline tickets using reinforcement learning", 2023-2024
   
 
-PGTA 
+### PGTA 
 
 * Faculty of Economics, University of Cambridge
 
