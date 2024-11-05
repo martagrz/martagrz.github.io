@@ -9,33 +9,33 @@ sections:
     content:  
       title: Teaching
       text: 
-        College Associate Lecturer, University of Cambridge
+      College Associate Lecturer, University of Cambridge
         
-        - Undergraduate Supervisions (Economics Tripos)
-          
-            * Microeconomics (Part I Paper 1), MT 2024
-          
-            * Mathematics and Statistics (Part I Paper 3), 2024
+          * Undergraduate Supervisions (Economics Tripos)
+              
+              * Microeconomics (Part I Paper 1), MT 2024
             
-            * Econometrics (Part IIA Paper 3), 2024
-            
-            * Microeconomics (Part IIB Paper 1), 2024
+              * Mathematics and Statistics (Part I Paper 3), 2024
+              
+              * Econometrics (Part IIA Paper 3), 2024
+              
+              * Microeconomics (Part IIB Paper 1), 2024
       
         
         Supervisor
         
-        - Department of Statistical Science, UCL
+        * Department of Statistical Science, UCL
     
             * Dissertation for MSc Data Science, "Dynamic pricing of airline tickets using reinforcement learning", 2023-2024
         
       
         PGTA 
       
-        - Faculty of Economics, University of Cambridge
+        * Faculty of Economics, University of Cambridge
     
             * D400 Research Computing (MPhil in Economics and Data Science), 2024
         
-        - Department of Statistical Science, UCL
+        * Department of Statistical Science, UCL
     
             * STAT0025 Optimisation Algorithms in Operational Research, 2022-2023
       
