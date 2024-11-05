@@ -25,7 +25,7 @@ sections:
         
           * Dissertation for MSc Data Science, Department of Statistical Science, UCL, 2023-2024 
         
-              * "Dynamic pricing of airline tickets using reinforcement learning" 
+              * Dynamic pricing of airline tickets using reinforcement learning 
         
       
         PGTA 
