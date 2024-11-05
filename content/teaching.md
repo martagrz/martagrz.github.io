@@ -13,20 +13,20 @@ sections:
         
         - Undergraduate Supervisions (Economics Tripos)
           
-          - Microeconomics (Part I Paper 1), MT 2024
-        
-          - Mathematics and Statistics (Part I Paper 3), 2024
+              - Microeconomics (Part I Paper 1), MT 2024
+            
+              - Mathematics and Statistics (Part I Paper 3), 2024
+              
+              - Econometrics (Part IIA Paper 3), 2024
+              
+              - Microeconomics (Part IIB Paper 1), 2024
           
-          - Econometrics (Part IIA Paper 3), 2024
-          
-          - Microeconomics (Part IIB Paper 1), 2024
-      
         
         Supervisor
         
-        * Dissertation for MSc Data Science, Department of Statistical Science, UCL, 2023-2024 
+        * Department of Statistical Science, UCL
     
-            * "Dynamic pricing of airline tickets using reinforcement learning" 
+            * Dissertation for MSc Data Science, "Dynamic pricing of airline tickets using reinforcement learning", 2023-2024
         
       
         PGTA 
