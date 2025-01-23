@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Marta Grześkiewicz
+title: Dr Marta Grześkiewicz
 
 # Name pronunciation (optional)
 # name_pronunciation: Chien Shiung Wu
