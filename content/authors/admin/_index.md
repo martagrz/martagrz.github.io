@@ -100,8 +100,6 @@ techniques in a variety of areas such as microeconomic theory, dynamic programmi
 machine learning.
 
 I am a College Associate Lecturer and Fellow in Economics at St John's College, University of Cambridge.
-
-I am also a founder of a tech start-up currently in stealth.
  
 
 
