@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Dr Marta Grześkiewicz
+title: Marta Grześkiewicz
 
 # Name pronunciation (optional)
 # name_pronunciation: Chien Shiung Wu
@@ -24,9 +24,12 @@ organizations:
   - name: St John's College, University of Cambridge
     url: https://www.joh.cam.ac.uk/
   
-  - name: Founder
+  - name: Faculty of Economics, University of Cambridge 
+    url: https://www.econ.cam.ac.uk/people/academic/marta-grzeskiewicz
     
-  - name: Start-up in Stealth 
+  - name: Cambridge Center for Data Driven Discovery 
+    url: https://www.c2d3.cam.ac.uk/directory/42387
+    
 
 # Short bio (displayed in user profile at end of posts)
 bio: My interests lie at the intersection of economics and machine learning. My work aims to understand and model the underlying mechanisms of choice and decision-making behaviour, accounting for dynamic settings, across a range of environments. 

@@ -10,7 +10,7 @@ type: page
 
 * Undergraduate Supervisions (Economics Tripos)
       
-    * Microeconomics (Part I Paper 1), MT 2024-
+    * Microeconomics (Part I Paper 1), 2024-
     
     * Mathematics and Statistics (Part I Paper 3), 2024-
       
@@ -20,7 +20,10 @@ type: page
 
   
 ### Research Supervisor
-  
+* Faculty of Economics, University of Cambridge
+
+    * 5 MPhil dissertations for MPhil in Economics \& Data Science, 2024-
+
 * Department of Statistical Science, UCL
 
     * Dissertation for MSc Data Science, "Dynamic pricing of airline tickets using reinforcement learning", 2023-2024
