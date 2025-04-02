@@ -1,9 +1,10 @@
 ---
 # Display name
-title: Marta Grześkiewicz
+title: Marta Grześkiewicz 
+       /ˈmɑːtə ɡrɛskɛvɪtʃ/
 
 # Name pronunciation (optional)
-name_pronunciation: /ˈmɑːtə ɡrɛskɛvɪtʃ/
+#name_pronunciation: /ˈmɑːtə ɡrɛskɛvɪtʃ/
 
 # Full name (for SEO)
 first_name: Marta
