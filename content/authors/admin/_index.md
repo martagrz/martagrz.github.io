@@ -1,7 +1,6 @@
 ---
 # Display name
 title: Marta Grześkiewicz 
-       /ˈmɑːtə ɡrɛskɛvɪtʃ/
 
 # Name pronunciation (optional)
 #name_pronunciation: /ˈmɑːtə ɡrɛskɛvɪtʃ/
