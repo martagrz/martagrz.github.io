@@ -3,7 +3,7 @@
 title: Marta Grześkiewicz
 
 # Name pronunciation (optional)
-# name_pronunciation: Chien Shiung Wu
+name_pronunciation: /ˈmɑːtə ɡrɛskɛvɪtʃ/
 
 # Full name (for SEO)
 first_name: Marta
