@@ -23,8 +23,8 @@ abstract: Determining consumer preferences and utility is a foundational challen
 #summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
 
 tags:
-- Source Themes
-featured: false
+- Computational Economics, Inverse Reinforcement Learning
+featured: true
 
 links:
 #- name: Custom Link
