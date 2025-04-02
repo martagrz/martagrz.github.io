@@ -2,8 +2,6 @@
 title: Teaching 
 summary: 
 type: page
-  
-
 ---
 
 ### College Associate Lecturer, University of Cambridge
