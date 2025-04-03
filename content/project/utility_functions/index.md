@@ -1,10 +1,11 @@
 ---
-title: Uncovering Utility Functions with Observational Data
-summary: 
+title: Preference Extraction and Reward Learning
+summary: Uncovering reward (utility) functions in economic settings. 
 tags:
   - Microeconomics 
   - Computational Economics 
   - Machine Learning 
+  - Inverse Reinforcement Learning
 date: '2024-05-18T00:00:00Z'
 
 # Optional external URL for project (replaces project detail page).

@@ -1,10 +1,12 @@
 ---
-title: Physics-informed Economic Modelling
-summary: Forecasting for economic indicators, including time-series modelling and geo-spatial prediction with graphical neural networks.  
+title: Agent-based modelling for banking and finance
+summary: 
 tags:
-  - Forecasting 
+  - Microeconomics 
   - Computational Economics 
   - Machine Learning 
+  - Financial Economics
+  - Agent-Based Modelling
 date: '2024-05-18T00:00:00Z'
 
 # Optional external URL for project (replaces project detail page).
