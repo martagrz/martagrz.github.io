@@ -17,7 +17,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: /ˈmɑːtə ɡrɛskɛvɪtʃ/ 
+role: /ˈmɑːtə ɡrɛskɛvɪtʃ/\
       
       College Associate Lecturer & Fellow in Economics
 
