@@ -2,6 +2,7 @@
 title: Teaching 
 summary: 
 type: page
+geometry: margin=2cm
 ---
 
 ### College Associate Lecturer, University of Cambridge
@@ -18,17 +19,17 @@ type: page
 
 * Lecturer, Department of Physics, University of Cambridge
 
-    * Multi-agent Reinforcement Learning and Agentic AI, MPhil for Data Intensive Science, Easter Term 2025
+    * *Multi-agent Reinforcement Learning and Agentic AI*, MPhil for Data Intensive Science, Easter Term 2025
 
   
 ### Research Supervisor
 * Faculty of Economics, University of Cambridge
 
-    * 5 MPhil dissertations for MPhil in Economics \& Data Science, 2024-
+    * Dissertations for MPhil in Economics \& Data Science, 2024-
 
 * Department of Statistical Science, UCL
 
-    * Dissertation for MSc Data Science, "Dynamic pricing of airline tickets using reinforcement learning", 2023-2024
+    * Dissertation for MSc Data Science, *"Dynamic pricing of airline tickets using reinforcement learning"*, 2023-2024 (Distinction)
   
 
 ### PGTA 
