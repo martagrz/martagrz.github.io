@@ -6,15 +6,19 @@ type: page
 
 ### College Associate Lecturer, University of Cambridge
 
-* Undergraduate Supervisions (Economics Tripos)
+* Undergraduate Supervisions, Economics Tripos
       
-    * Microeconomics (Part I Paper 1), 2024-
+    * 1st Year: *Microeconomics* (Part I Paper 1), 2024-
     
-    * Mathematics and Statistics (Part I Paper 3), 2024-
+    * 1st Year: *Quantitative Methods in Economics* (Mathematics and Statistics) (Part I Paper 3), 2024-
       
-    * Econometrics (Part IIA Paper 3), 2024-
+    * 2nd Year: *Introduction to Econometrics* (Part IIA Paper 3), 2024-
       
-    * Microeconomics (Part IIB Paper 1), 2024-
+    * 3rd Year: *Microeconomic Principles & Problems* (Part IIB Paper 1), 2024-
+
+* Lecturer, Department of Physics, University of Cambridge
+
+    * Multi-agent Reinforcement Learning and Agentic AI, MPhil for Data Intensive Science, Easter Term 2025
 
   
 ### Research Supervisor
