@@ -1,5 +1,5 @@
 ---
-title: 'AI ENGINE: UK UNIVERSITY HACKATHON (Organiser)'
+title: 'AI ENGINE: UK UNIVERSITY HACKATHON (Co-organiser)'
 
 event: 'AI ENGINE: UK UNIVERSITY HACKATHON'
 event_url: https://www.aienginehackathon.com/
