@@ -1,5 +1,5 @@
 ---
-title: 'Machine Learning vs. Human Learning – What Have We Learned?'
+title: 'Machine Learning vs. Human Learning – What Have We Learned? (Panelist)'
 
 event: 'Machine Learning vs. Human Learning – What Have We Learned?'
 event_url: https://stjohns.co.uk/event/machine-learning-vs-human-learning-what-have-we-learned-2/
