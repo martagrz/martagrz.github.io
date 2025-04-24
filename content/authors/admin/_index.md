@@ -48,10 +48,10 @@ interests:
 education:
   courses:
     - course: PhD in Economics & Machine Learning
-      institution: University College London
+      institution: Department of Statistical Science, University College London
       year: 2019 - 2024
     - course: MSc in Data Science
-      institution: University College London
+      institution: Department of Statistical Science, University College London
       year: 2018 - 2019
     - course: BA in Economics
       institution: University of Cambridge
