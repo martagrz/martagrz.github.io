@@ -10,7 +10,7 @@ address:
   city: Santiago
   country: Chile
 
-summary: Society for Computational Economics.
+summary: Organised by the Society for Computational Economics. Peer-reviewed. 
 abstract: 
 
 # Talk start and end times.

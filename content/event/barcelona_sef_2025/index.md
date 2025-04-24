@@ -4,7 +4,7 @@ title: 'BSE Summer Forum Workshop on Computational and Experimental Economics (A
 event: 'Barcelona School of Economics Summer Forum Workshop on Computational and Experimental Economics'
 event_url: https://bse.eu/summer-forum
 
-location: Barcelona
+location: Barcelona School of Economics
 address:
   street: 
   city: Barcelona

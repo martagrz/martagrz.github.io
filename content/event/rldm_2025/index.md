@@ -4,7 +4,7 @@ title: 'Reinforcement Learning and Decision Making Conference 2025 (Accepted Pos
 event: 'Reinforcement Learning and Decision Making (RLDM)'
 event_url: https://rldm.org/
 
-location: Trinity College Dublin
+location: Trinity College, Dublin
 address:
   street: 
   city: Dublin

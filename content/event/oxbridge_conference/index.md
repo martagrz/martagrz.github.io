@@ -4,13 +4,13 @@ title: 'Oxbridge Women in Computer Science Conference 2025 (Oral Presentation)'
 event: 'Oxbridge Women in Computer Science Conference 2025'
 event_url: https://www.cst.cam.ac.uk/oxbridge-women-computer-science-conference-2025
 
-location: Westminster College
+location: Department of Computer Science, University of Cambridge
 address:
   street: 
   city: Cambridge
   country: UK
 
-summary: 
+summary: Peer-reviewed
 abstract: 
 
 # Talk start and end times.
