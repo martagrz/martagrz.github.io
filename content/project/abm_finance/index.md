@@ -1,5 +1,5 @@
 ---
-title: Agent-based modelling for banking and finance
+title: Agent-based modelling and machine learning for banking and finance
 summary: 
 tags:
   - Microeconomics 
