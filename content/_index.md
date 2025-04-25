@@ -184,6 +184,16 @@ sections:
 #      columns: '2'
 #      view: citation
   - block: collection
+    id: conferences
+    content:
+      title: Conferences
+      filters:
+        folders:
+          - conferences
+    design:
+      columns: '2'
+      view: compact
+  - block: collection
     id: events
     content:
       title: Events
