@@ -22,6 +22,9 @@ main:
   - name: Events
     url: '#events'
     weight: 40
+  - name: Conferences
+    url: '#conferences'
+    weight: 40
 
 #  - name: Contact
 #    url: '#contact'
