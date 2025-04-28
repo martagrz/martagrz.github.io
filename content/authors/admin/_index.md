@@ -93,15 +93,13 @@ highlight_name: true
 
 
 ---
-
-My research interests lie at the intersection of economics and machine learning. My work aims to understand and model 
-the mechanisms underlying choice and decision-making processes, combining aspects of economic theory with modern 
-computational methods. This is applicable to a range of environments, including choice under uncertainty, 
-inter-temporal decision-making and multi-agent interactions. To this end, I combine and develop tools and 
-techniques in a variety of areas such as microeconomic theory, dynamic programming (reinforcement learning) and 
-machine learning.
-
 I am a College Associate Lecturer and Fellow in Economics at St John's College, University of Cambridge.
+
+My research interests lie at the intersection of economics and machine learning. My current projects involve developing algorithms to model choice and decision-making by economic agents, with applications in industrial organisation (demand estimation, revenue management, and dynamic price optimisation), agent-based modelling with machine learning in banking and finance, and the integration of economic theory into machine learning models for economic forecasting.
+
+I teach and have taught across economics, machine learning, and statistics at both UCL and the University of Cambridge. This year, I am also designing and delivering a lecture course on _Multi-agent Reinforcement Learning and Agentic AI_ at the Department of Physics, University of Cambridge. I have prior experience in investment banking, as a machine learning researcher, and have previously founded a VC-backed start-up.
+
+
  
 
 
