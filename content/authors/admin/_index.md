@@ -32,6 +32,9 @@ organizations:
   - name: Cambridge Center for Data Driven Discovery 
     url: https://www.c2d3.cam.ac.uk/directory/42387
     
+  - name: Centre for Science and Policy (CSaP)
+    url: https://www.csap.cam.ac.uk/network/marta-grzeskiewicz/
+    
 
 # Short bio (displayed in user profile at end of posts)
 bio: My interests lie at the intersection of economics and machine learning. My work aims to understand and model the underlying mechanisms of choice and decision-making behaviour, accounting for dynamic settings, across a range of environments. 
