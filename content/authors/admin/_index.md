@@ -97,7 +97,7 @@ I am a College Associate Lecturer and Fellow in Economics at St John's College, 
 
 My research interests lie at the intersection of economics and machine learning. My current projects involve developing algorithms to model choice and decision-making by economic agents, with applications in industrial organisation (demand estimation, revenue management, and dynamic price optimisation), agent-based modelling with machine learning in banking and finance, and the integration of economic theory into machine learning models for economic forecasting.
 
-I teach and have taught across economics, machine learning, and statistics at both UCL and the University of Cambridge. This year, I am also designing and delivering a lecture course on _Multi-agent Reinforcement Learning and Agentic AI_ at the Department of Physics, University of Cambridge. I have prior experience in investment banking, as a machine learning researcher, and have previously founded a VC-backed start-up.
+I teach and have taught across economics, machine learning, and statistics at both UCL and the University of Cambridge. This year, I am also designing and delivering a lecture course on _Multi-agent Reinforcement Learning and Agentic AI_ at the Department of Physics, University of Cambridge. I have prior experience in investment banking, as a machine learning researcher, and have founded a VC-backed start-up.
 
 
  
