@@ -96,7 +96,7 @@ highlight_name: true
 
 
 ---
-I am a College Associate Lecturer and Fellow in Economics at St John's College, University of Cambridge.
+I am a College Assistant Professor (Early Career Fellowship) and Fellow in Economics at St John's College, University of Cambridge.
 
 My research interests lie at the intersection of economics and machine learning. My current projects involve developing algorithms to model choice and decision-making by economic agents, with applications in industrial organisation (demand estimation, revenue management, and dynamic price optimisation), agent-based modelling with machine learning in banking and finance, and the integration of economic theory into machine learning models for economic forecasting.
 
