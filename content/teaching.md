@@ -5,7 +5,7 @@ type: page
 geometry: margin=2cm
 ---
 
-### College Associate Lecturer, University of Cambridge
+### College Assistant Professor, University of Cambridge
 
 * Undergraduate Supervisions, Economics Tripos
       

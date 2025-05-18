@@ -19,7 +19,7 @@ superuser: true
 # Role/position/tagline
 role: /ˈmɑːtə ɡrɛskɛvɪtʃ/\
       
-      College Associate Lecturer & Fellow in Economics
+      College Assistant Professor & Fellow in Economics
 
 # Organizations/Affiliations to show in About widget
 organizations:
