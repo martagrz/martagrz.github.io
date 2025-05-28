@@ -1,5 +1,5 @@
 ---
-title: 'BSE Summer Forum Workshop on Computational and Experimental Economics (Accepted Poster)'
+title: 'BSE Summer Forum Workshop on Computational and Experimental Economics (Oral Presentation)'
 
 event: 'Barcelona School of Economics Summer Forum Workshop on Computational and Experimental Economics'
 event_url: https://bse.eu/summer-forum
