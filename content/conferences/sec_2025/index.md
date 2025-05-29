@@ -1,5 +1,5 @@
 ---
-title: '31st International Conference on Computing in Economics and Finance (CEF 2025)'
+title: '31st International Conference on Computing in Economics and Finance (CEF 2025) (Oral Presentation)'
 
 event: '31st International Conference on Computing in Economics and Finance (CEF 2025)'
 event_url: https://comp-econ.com/31st-conference/
