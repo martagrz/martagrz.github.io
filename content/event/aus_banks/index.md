@@ -4,13 +4,15 @@ title: 'Current Trends and Future Outlooks for AI in Economics and Banking (Pres
 event: 'Workshop on _Current Trends and Future Outlooks for AI in Economics and Baking_ - part of Constantinople Europe Study Tour'
 event_url: https://www.linkedin.com/posts/cxnplio_europestudytour-money2020-futureofbanking-activity-7335077694721691648-mGjE?utm_source=share&utm_medium=member_desktop&rcm=ACoAADogzqYBoh1L64UnSnjzkX_ZuBUWCnRkUQM
 
-location: Jesus College, Cambridge
+location: Jesus College, University of Cambridge
 address:
   street: 
   city: Cambridge
   country: UK
 
-summary: 
+summary: Workshop for executives and leaders in banking in Australia. Topics including LLMs, Foundation Models, Machine Learning in Economics, Agent-Based Modelling in Economcis \& Central Banking, Federated Learning, Regulation, and Data Sharing. 
+
+
 abstract: 
 
 # Talk start and end times.
@@ -26,7 +28,7 @@ authors: []
 tags: []
 
 # Is this a featured talk? (true/false)
-featured: false
+featured: true
 
 image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
