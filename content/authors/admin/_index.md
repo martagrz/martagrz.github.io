@@ -102,6 +102,8 @@ My research interests lie at the intersection of economics and machine learning.
 
 I teach and have taught across economics, machine learning, and statistics at both UCL and the University of Cambridge. This year, I am also designing and delivering a lecture course on _Multi-agent Reinforcement Learning and Agentic AI_ at the Department of Physics, University of Cambridge. I have prior experience in investment banking, as a machine learning researcher, and have founded a VC-backed start-up.
 
+Keywords: Inverse Reinforcement Learning, Computational Economics, Economics and Machine Learning, Constrained Optimisation, Preferences and Utility, Microeconomics, Reward Learning, Multi-agent Reinforcement Learning, Agent-based Modelling.
+
 
  
 
