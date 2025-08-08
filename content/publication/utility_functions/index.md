@@ -17,7 +17,7 @@ publication_types: ["article"]
 #publication: "Uncovering Utility Functions from Observed Outcomes"
 #publication_short: "Uncovering Utility Functions from Observed Outcomes"
 
-abstract: Understanding household behaviour is essential for modelling macroeconomic dynamics and de- signing effective policy. While heterogeneous agent models offer a more realistic alternative to rep- resentative agent frameworks, their implementation poses significant computational challenges, par- ticularly in continuous time. The Aiyagari-Bewley-Huggett (ABH) framework, recast as a system of partial differential equations, typically relies on grid-based solvers that suffer from the curse of di- mensionality, high computational cost, and numerical inaccuracies. This paper introduces the ABH- PINN solver, an approach based on Physics-Informed Neural Networks (PINNs), which embeds the Hamilton-Jacobi-Bellman and Kolmogorov Forward equations directly into the neural network train- ing objective. By replacing grid-based approximation with mesh-free, differentiable function learning, the ABH-PINN solver benefits from the advantages of PINNs of improved scalability, smoother solu- tions, and computational efficiency. Preliminary results show that the PINN-based approach is able to obtain economically valid results matching the established finite-difference solvers. We hope this will open new avenues for solving complex heterogeneous agent models in macroeconomics.
+abstract: Understanding household behaviour is essential for modelling macroeconomic dynamics and designing effective policy. While heterogeneous agent models offer a more realistic alternative to representative agent frameworks, their implementation poses significant computational challenges, particularly in continuous time. The Aiyagari-Bewley-Huggett (ABH) framework, recast as a system of partial differential equations, typically relies on grid-based solvers that suffer from the curse of dimensionality, high computational cost, and numerical inaccuracies. This paper introduces the ABH- PINN solver, an approach based on Physics-Informed Neural Networks (PINNs), which embeds the Hamilton-Jacobi-Bellman and Kolmogorov Forward equations directly into the neural network training objective. By replacing grid-based approximation with mesh-free, differentiable function learning, the ABH-PINN solver benefits from the advantages of PINNs of improved scalability, smoother solutions, and computational efficiency. Preliminary results show that the PINN-based approach is able to obtain economically valid results matching the established finite-difference solvers. We hope this will open new avenues for solving complex heterogeneous agent models in macroeconomics.
 
 # Summary. An optional shortened abstract.
 #summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
@@ -31,7 +31,7 @@ featured: true
 links:
 #- name: Custom Link
 #  url: http://example.org
-url_pdf: 'pdf/Grzeskiewicz_Solving_HAMs_with_PINNs.pdf'
+#url_pdf: 'pdf/Grzeskiewicz_Solving_HAMs_with_PINNs.pdf'
 #url_code: 'https://github.com/HugoBlox/hugo-blox-builder'
 #url_dataset: '#'
 #url_poster: '#'
