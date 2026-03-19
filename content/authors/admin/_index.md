@@ -37,7 +37,7 @@ organizations:
     
 
 # Short bio (displayed in user profile at end of posts)
-bio: My interests lie at the intersection of economics and machine learning. My work aims to understand and model the underlying mechanisms of choice and decision-making behaviour, accounting for dynamic settings, across a range of environments. 
+bio: I am a researcher at the intersection of economics and machine learning and AI. 
 
 # Interests to show in About widget
 interests:
@@ -96,15 +96,8 @@ highlight_name: true
 
 
 ---
-I am a College Assistant Professor (Early Career Fellowship) and Fellow in Economics at St John's College, University of Cambridge. I hold a PhD in Economics and Machine Learning from UCL.
+I am a researcher at the intersection of economics and machine learning and AI, specialising in computational economics, behavioural economics, and data-driven modelling of decision-making processes. My work focuses on reinforcement learning, agent-based models (ABMs), and neural approaches to utility and demand estimation to understand economic behavior across markets, finance, and macroeconomics.
 
-My research interests lie at the intersection of economics and machine learning. My current projects involve developing algorithms to model choice and decision-making by economic agents, with applications in industrial organisation (demand estimation, revenue management, and dynamic price optimisation), agent-based modelling with machine learning in banking and finance, and the integration of economic theory into machine learning models for economic forecasting.
+In March 2026, I will join Capula Investment Management as a Portfolio Research Scientist. I am also a College Teaching Associate at St John’s College, University of Cambridge and will join Lucy Cavendish College, Cambridge as a Bye-Fellow for the 2026–2027 academic year. I supervise MPhil dissertations in Economics and Data Science at the Faculty of Economics, University of Cambridge.
 
-I teach and have taught across economics, machine learning, and statistics at both UCL and the University of Cambridge. This year, I am also designing and delivering a lecture course on _Multi-agent Reinforcement Learning and Agentic AI_ at the Department of Physics, University of Cambridge. I have prior experience in investment banking, as a machine learning researcher, and have founded a VC-backed start-up.
-
-Keywords: Inverse Reinforcement Learning, Computational Economics, Economics and Machine Learning, Constrained Optimisation, Preferences and Utility, Microeconomics, Reward Learning, Multi-agent Reinforcement Learning, Agent-based Modelling.
-
-
- 
-
-
+I hold a BA in Economics from the University of Cambridge and a PhD in Economics and Machine Learning from the UCL Department of Statistical Science.

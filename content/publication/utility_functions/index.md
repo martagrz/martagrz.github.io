@@ -1,8 +1,8 @@
 ---
-title: "Solving Heterogeneous Agent Models with Physics-Informed Neural Networks"
+title: "Uncovering Utility Functions from Observed Outcomes"
 authors:
 - admin
-date: "2025-08-08T00:00:00Z"
+date: "2025-03-17T00:00:00Z"
 doi: ""
 
 # Schedule page publish date (NOT publication's date).
@@ -17,21 +17,20 @@ publication_types: ["article"]
 #publication: "Uncovering Utility Functions from Observed Outcomes"
 #publication_short: "Uncovering Utility Functions from Observed Outcomes"
 
-abstract: Understanding household behaviour is essential for modelling macroeconomic dynamics and designing effective policy. While heterogeneous agent models offer a more realistic alternative to representative agent frameworks, their implementation poses significant computational challenges, particularly in continuous time. The Aiyagari-Bewley-Huggett (ABH) framework, recast as a system of partial differential equations, typically relies on grid-based solvers that suffer from the curse of dimensionality, high computational cost, and numerical inaccuracies. This paper introduces the ABH- PINN solver, an approach based on Physics-Informed Neural Networks (PINNs), which embeds the Hamilton-Jacobi-Bellman and Kolmogorov Forward equations directly into the neural network training objective. By replacing grid-based approximation with mesh-free, differentiable function learning, the ABH-PINN solver benefits from the advantages of PINNs of improved scalability, smoother solutions, and computational efficiency. Preliminary results show that the PINN-based approach is able to obtain economically valid results matching the established finite-difference solvers. We hope this will open new avenues for solving complex heterogeneous agent models in macroeconomics.
+abstract: Determining consumer preferences and utility is a foundational challenge in economics. They are central in determining consumer behaviour through the utility-maximising consumer decision-making process. However, preferences and utilities are not observable and may not even be known to the individual making the choice; only the outcome is observed in the form of demand. Without the ability to observe the decision-making mechanism, demand estimation becomes a challenging task and current methods fall short due to lack of scalability or ability to identify causal effects. Estimating these effects is critical when considering changes in policy, such as pricing, the impact of taxes and subsidies, and the effect of a tariff. To address the shortcomings of existing methods, we combine revealed preference theory and inverse reinforcement learning to present a novel algorithm, Preference Extraction and Reward Learning (PEARL) which, to the best of our knowledge, is the only algorithm that can uncover a representation of the utility function that best rationalises observed consumer choice data given a specified functional form. We introduce a flexible utility function, the Input-Concave Neural Network which captures complex relationships across goods, including cross-price elasticities. Results show PEARL outperforms the benchmark on both noise-free and noisy synthetic data.
 
 # Summary. An optional shortened abstract.
 #summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
 
 tags:
 - Computational Economics
-- Physics-Informed Neural Networks
-- Heterogeneous Agent Models 
+- Inverse Reinforcement Learning
 featured: true
 
 links:
 #- name: Custom Link
 #  url: http://example.org
-#url_pdf: 'pdf/Grzeskiewicz_Solving_HAMs_with_PINNs.pdf'
+url_pdf: https://arxiv.org/abs/2503.13432
 #url_code: 'https://github.com/HugoBlox/hugo-blox-builder'
 #url_dataset: '#'
 #url_poster: '#'
