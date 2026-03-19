@@ -18,19 +18,17 @@ superuser: true
 
 # Role/position/tagline
 role: /ˈmɑːtə ɡrɛskɛvɪtʃ/\
-      
-      College Assistant Professor & Fellow in Economics
 
 # Organizations/Affiliations to show in About widget
 organizations:
+  - name: Capula Investment Management 
+    url: https://www.capulaglobal.com/
+      
   - name: St John's College, University of Cambridge
     url: https://www.joh.cam.ac.uk/
   
   - name: Faculty of Economics, University of Cambridge 
     url: https://www.econ.cam.ac.uk/people/academic/marta-grzeskiewicz
-    
-  - name: Cambridge Center for Data Driven Discovery 
-    url: https://www.c2d3.cam.ac.uk/directory/42387
     
   - name: Centre for Science and Policy (CSaP)
     url: https://www.csap.cam.ac.uk/network/marta-grzeskiewicz/
@@ -99,5 +97,3 @@ highlight_name: true
 I am a researcher at the intersection of economics and machine learning and AI, specialising in computational economics, behavioural economics, and data-driven modelling of decision-making processes. My work focuses on reinforcement learning, agent-based models (ABMs), and neural approaches to utility and demand estimation to understand economic behavior across markets, finance, and macroeconomics.
 
 In March 2026, I will join Capula Investment Management as a Portfolio Research Scientist. I am also a College Teaching Associate at St John’s College, University of Cambridge and will join Lucy Cavendish College, Cambridge as a Bye-Fellow for the 2026–2027 academic year. I supervise MPhil dissertations in Economics and Data Science at the Faculty of Economics, University of Cambridge.
-
-I hold a BA in Economics from the University of Cambridge and a PhD in Economics and Machine Learning from the UCL Department of Statistical Science.
