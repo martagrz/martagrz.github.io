@@ -1,28 +1,28 @@
 ---
-title: 'Current Trends and Future Outlooks for AI in Economics and Banking (Presenter & Organiser)'
+title: 'Seminar at INET, University of Oxford'
 
-event: 'Workshop on _Current Trends and Future Outlooks for AI in Economics and Baking_ - part of Constantinople Europe Study Tour'
-event_url: https://www.linkedin.com/posts/cxnplio_europestudytour-money2020-futureofbanking-activity-7335077694721691648-mGjE?utm_source=share&utm_medium=member_desktop&rcm=ACoAADogzqYBoh1L64UnSnjzkX_ZuBUWCnRkUQM
+event: 'Seminar at INET, University of Oxford'
+event_url: https://www.inet.ox.ac.uk/events/uncovering-utility-functions-from-observational-data
 
-location: Jesus College, University of Cambridge
+location: INET, University of Oxford 
 address:
   street: 
-  city: Cambridge
+  city: Oxford
   country: UK
 
-summary: Workshop for executives and leaders in banking in Australia. Topics including LLMs, Foundation Models, Machine Learning in Economics, Agent-Based Modelling in Economcis \& Central Banking, Federated Learning, Regulation, and Data Sharing. 
+summary:  
 
 
 abstract: 
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: '2025-05-28T14:00:00Z'
-date_end: '2025-05-28T15:30:00Z'
+date: '2025-10-22T14:00:00Z'
+date_end: '2025-10-22T15:30:00Z'
 all_day: false
 
 # Schedule page publish date (NOT talk date).
-publishDate: '2025-01-23T00:00:00Z'
+publishDate: '2025-10-22T00:00:00Z'
 
 authors: []
 tags: []

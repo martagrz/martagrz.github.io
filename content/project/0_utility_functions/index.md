@@ -12,14 +12,14 @@ date: '2024-05-18T00:00:00Z'
 external_link: ''
 
 image:
-  caption: Photo by rawpixel on Unsplash
+  caption: 
   focal_point: Smart
 
 #links:
 #  - icon: twitter
 #    icon_pack: fab
 #    name: Follow
-#    url: https://twitter.com/georgecushen
+#    url: 
 #url_code: ''
 #url_pdf: ''
 #url_slides: ''

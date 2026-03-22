@@ -1,28 +1,28 @@
 ---
-title: 'Current Trends and Future Outlooks for AI in Economics and Banking (Presenter & Organiser)'
+title: 'Class on Multi-agent Reinforcement Learning'
 
-event: 'Workshop on _Current Trends and Future Outlooks for AI in Economics and Baking_ - part of Constantinople Europe Study Tour'
+event: 'Class on Multi-agent Reinforcement Learning'
 event_url: https://www.linkedin.com/posts/cxnplio_europestudytour-money2020-futureofbanking-activity-7335077694721691648-mGjE?utm_source=share&utm_medium=member_desktop&rcm=ACoAADogzqYBoh1L64UnSnjzkX_ZuBUWCnRkUQM
 
-location: Jesus College, University of Cambridge
-address:
-  street: 
-  city: Cambridge
+location: Institute of New Economic Thinking, Oxford Martin School
+address: 
+  street: University of Oxford 
+  city: Oxford
   country: UK
 
-summary: Workshop for executives and leaders in banking in Australia. Topics including LLMs, Foundation Models, Machine Learning in Economics, Agent-Based Modelling in Economcis \& Central Banking, Federated Learning, Regulation, and Data Sharing. 
+summary:  
 
 
 abstract: 
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: '2025-05-28T14:00:00Z'
-date_end: '2025-05-28T15:30:00Z'
+date: '2025-10-23T14:00:00Z'
+date_end: '2025-10-23T15:30:00Z'
 all_day: false
 
 # Schedule page publish date (NOT talk date).
-publishDate: '2025-01-23T00:00:00Z'
+publishDate: '2025-10-23T00:00:00Z'
 
 authors: []
 tags: []
