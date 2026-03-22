@@ -16,7 +16,7 @@ abstract: This talk explores the integration of Multi-Agent Reinforcement Learni
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
 date: '2025-08-05T04:00:00Z'
-date_end: '2025-08-06T29:00:00Z'
+date_end: '2025-08-07T05:00:00Z'
 all_day: false
 
 # Schedule page publish date (NOT talk date).
