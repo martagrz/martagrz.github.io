@@ -35,7 +35,7 @@ organizations:
     
 
 # Short bio (displayed in user profile at end of posts)
-bio: I am a researcher at the intersection of economics and machine learning and AI. 
+bio: I am a researcher at the intersection of economics and machine learning / AI. 
 
 # Interests to show in About widget
 interests:
@@ -94,7 +94,7 @@ highlight_name: true
 
 
 ---
-I am a researcher at the intersection of economics and machine learning and AI, specialising in computational economics, behavioural economics, and data-driven modelling of decision-making processes. My work focuses on reinforcement learning, agent-based models (ABMs), and neural approaches to utility and demand estimation to understand economic behaviour across markets, finance, and macroeconomics.
+I am a researcher at the intersection of economics and machine learning / AI, specialising in computational economics, behavioural economics, and data-driven modelling of decision-making processes. My work focuses on reinforcement learning, agent-based models (ABMs), and neural approaches to utility and demand estimation to understand economic behaviour across markets, finance, and macroeconomics.
 
 In March 2026, I will join Capula Investment Management as a Portfolio Research Scientist. I am also a College Teaching Associate at St John’s College, University of Cambridge (prev. College Assistant Professor) and I will join Lucy Cavendish College, University of Cambridge as a Bye-Fellow for the 2026–2027 academic year. 
 

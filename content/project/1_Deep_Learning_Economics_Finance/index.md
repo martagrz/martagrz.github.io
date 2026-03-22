@@ -1,6 +1,6 @@
 ---
-title: Physics-informed Economic Modelling
-summary: Forecasting for economic indicators, including time-series modelling and geo-spatial prediction with graphical neural networks.  
+title: Deep Learning for Economics and Finance
+summary: Deep learning-based forecasting, causal inference, and explainable AI.
 tags:
   - Forecasting 
   - Computational Economics 
