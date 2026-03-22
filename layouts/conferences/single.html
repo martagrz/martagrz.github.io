@@ -6,15 +6,13 @@
 
   <div class="article-container">
 
-    {{ with .Params.summary }}
-      <h3>Summary</h3>
-      <p class="pub-abstract">{{ . | markdownify | emojify }}</p>
-    {{ end }}
+    {{ $summary := .Params.summary | default "No summary provided yet." }}
+    <h3>Summary</h3>
+    <p class="pub-abstract">{{ $summary | markdownify | emojify }}</p>
 
-    {{ with .Params.abstract }}
-      <h3>{{ i18n "abstract" }}</h3>
-      <p class="pub-abstract">{{ . | markdownify | emojify }}</p>
-    {{ end }}
+    {{ $abstract := .Params.abstract | default "No abstract provided yet." }}
+    <h3>{{ i18n "abstract" }}</h3>
+    <p class="pub-abstract">{{ $abstract | markdownify | emojify }}</p>
 
     <div class="row">
       <div class="col-md-1"></div>
