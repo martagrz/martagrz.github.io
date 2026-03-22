@@ -10,8 +10,8 @@ address:
   city: Sante Fe
   country: New Mexico, USA 
 
-summary: Month-long working group will generally focus on Agent-based Modeling (ABM) 
-abstract: 
+summary: Month-long working group focusing on Agent-based Modelling (ABM). 
+abstract: This talk explores the integration of Multi-Agent Reinforcement Learning (MARL) into economic agent-based models. Using the "AI Economist" framework as a case study for taxation policy, I introduce the PEARL algorithm—a method for recovering underlying agent utility functions from observed data using input-concave neural networks. By moving beyond fixed behavioural assumptions, these techniques enable more realistic modelling of co-adapting agents and social planners in complex economic environments.
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
