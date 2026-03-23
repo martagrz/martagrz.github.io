@@ -94,8 +94,8 @@ highlight_name: true
 
 
 ---
-I am a researcher at the intersection of economics and machine learning/AI, specialising in computational and behavioural economics, with a focus on data-driven models of decision-making. My work combines economic theory with reinforcement learning, agent-based models, and deep learning to study behaviour in markets, finance, and macroeconomics.
+I am a researcher at the intersection of economics and machine learning/AI, specialising in computational and behavioural economics. My work focuses on developing data-driven models of decision-making, combining economic theory with reinforcement learning, agent-based models, and deep learning to study behaviour in markets, finance, and macroeconomics.
 
-In March 2026, I will join Capula Investment Management as a Portfolio Research Scientist. I am currently a College Teaching Associate in Economics at St John’s College, University of Cambridge (formerly College Assistant Professor), and will serve as a Bye-Fellow in Economics at Lucy Cavendish College, University of Cambridge for the 2026–2027 academic year. 
+In March 2026, I will join Capula Investment Management as a Portfolio Research Scientist. I am currently a College Teaching Associate in Economics at St John’s College, University of Cambridge (formerly College Assistant Professor), and will serve as a Bye-Fellow in Economics at Lucy Cavendish College, University of Cambridge for the 2026–2027 academic year.
 
-I supervise dissertations for the MPhil in Economics and Data Science at the University of Cambridge. My background includes experience in investment banking and machine learning research, as well as founding venture-backed startups. I am also an angel investor. 
+I supervise dissertations for the MPhil in Economics and Data Science at the University of Cambridge. My background spans investment banking, machine learning research, and founding venture-backed startups. I am also an angel investor. 
