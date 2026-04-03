@@ -101,6 +101,6 @@ I am a researcher at the intersection of economics and machine learning/AI, spec
 
 I am a Portfolio Research Scientist at Capula Investment Management and I am a College Teaching Associate in Economics at St John’s College, University of Cambridge (formerly College Assistant Professor), and a Bye-Fellow in Economics at Lucy Cavendish College, University of Cambridge.
 
-I supervise dissertations for the MPhil in Economics and Data Science at the University of Cambridge. My background spans investment banking, machine learning research, and founding venture-backed startups. I am also an angel investor.
+At Cambridge, I am currently supervising Part IIA Paper 3 (Econometrics) and dissertations for the MPhil in Economics and Data Science. My background spans investment banking, machine learning research, and founding venture-backed startups. I am also an angel investor.
 
 
