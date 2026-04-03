@@ -23,6 +23,9 @@ role: /ˈmɑːtə ɡrɛskɛvɪtʃ/\
 organizations:
   - name: Capula Investment Management 
     url: https://www.capulaglobal.com/
+    
+  - name: Lucy Cavendish College, University of Cambridge
+    url: https://www.lucy.cam.ac.uk/
       
   - name: St John's College, University of Cambridge
     url: https://www.joh.cam.ac.uk/
@@ -94,10 +97,10 @@ highlight_name: true
 
 
 ---
-I am a researcher at the intersection of economics and machine learning/AI, specialising in computational and behavioural economics. My work develops data-driven models of decision-making, combining economic theory with reinforcement learning, agent-based models, and deep learning to study behaviour in markets, finance, and macroeconomics.
+I am a researcher at the intersection of economics and machine learning/AI, specialising in computational and behavioural economics. My work develops data-driven models of decision-making, combining economic theory with reinforcement learning, agent-based models, and deep learning to study behaviour in markets, finance, and macroeconomics. My research aims to bridge economic theory and modern AI to better understand and predict real-world decision-making.
 
-In March 2026, I will join Capula Investment Management as a Portfolio Research Scientist. I am currently a College Teaching Associate in Economics at St John’s College, University of Cambridge (formerly College Assistant Professor), and will serve as a Bye-Fellow in Economics at Lucy Cavendish College, University of Cambridge for the 2026–2027 academic year.
+I am a Portfolio Research Scientist at Capula Investment Management and I am a College Teaching Associate in Economics at St John’s College, University of Cambridge (formerly College Assistant Professor), and a Bye-Fellow in Economics at Lucy Cavendish College, University of Cambridge.
 
 I supervise dissertations for the MPhil in Economics and Data Science at the University of Cambridge. My background spans investment banking, machine learning research, and founding venture-backed startups. I am also an angel investor.
 
-My research aims to bridge economic theory and modern AI to better understand and predict real-world decision-making.
+
